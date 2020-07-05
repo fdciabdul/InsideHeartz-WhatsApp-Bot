@@ -191,61 +191,27 @@ const media = new MessageMedia('image/jpg', yuli);
 console.log(gambar);
 client.sendMessage(media);
 }
-  else if (msg.body.startsWith("!fb ")) {
-    msg.reply(`*Hai, Kita Proses Dulu Ya . . .*`);
-    let link = msg.body.split(" ")[1];
-	var namafile = "gue.mp4"
-	var chat = await msg.getChat();
-	const { exec } = require("child_process");
-    const browser = await puppeteer.launch({
-      headless: false,
-      args: [
-        "--no-sandbox",
-        "--disable-setuid-sandbox",
-        "--disable-dev-shm-usage",
-        "--disable-accelerated-2d-canvas",
-        "--disable-gpu",
-        "--window-size=1920x1080",
-      ],
-    });
-    const page = await browser.newPage();
-    await page
-      .goto("https://id.savefrom.net/download-from-instagram", {
-        waitUntil: "networkidle2",
-      })
-      .then(async () => {
-        await page.type("#sf_url", `${link}`);
-        await page.click("#sf_submit");
-        try {
-          msg.reply("Mendownload Video!");
-          await page.waitForSelector(
-            "#sf_result > div > div.result-box.video > div.info-box > div.link-box.single > div.def-btn-box > a"
-          );
-          const element = await page.$(
-            "#sf_result > div > div.result-box.video > div.info-box > div.link-box.single > div.def-btn-box > a"
-          );
-          const text = await (await element.getProperty("href")).jsonValue();
-          const judul = await page.$(
-            "#sf_result > div > div.result-box.video > div.info-box > div.meta > div"
-          );
-          const judul1 = await (await judul.getProperty("title")).jsonValue();
-          console.log(
-            `[${moment().format("hh:mm:ss")}][!fb][${
-              msg.from
-            }] > Berhasil Dilakukan`
-          );
-          msg.reply(
-            `*BERHASIL!!!*
-Judul : ${judul1}
-			  
-			  
- 👾 Instagram Downloader By InsideHeartz 👾`
-          );
-		  
-exec('wget "' + text + '" -O mp4/'+ namafile +'.mp4', (error, stdout, stderr) => {
-  const media = MessageMedia.fromFilePath('mp4/'+ namafile +'.mp4');
+else if (msg.body.startsWith("!nh ")) {
+const kode = msg.body.split(" ")[1];
+const NanaAPI = require("nana-api");
+const nana = new NanaAPI();
+const https = require("https");
+const fs = require("fs");
+const { exec } = require("child_process");
 
-	chat.sendMessage(media);
+// Get gallery from book ID or book link
+nana.g(kode).then((g) => {
+if (g == 'Book not found!'){
+msg.reply("Kode nuklir nya salah , coba perhatiin lagi")
+}else{
+var url = "https://t.nhentai.net/galleries/"+ g.media_id +"/cover.jpg"
+
+exec('wget "' + url + '" -O cover.jpg', (error, stdout, stderr) => {
+ var teks = "Judul English  : "+ g.title.english.slice("0") +" \n \n Judul Japanese : "+ g.title.japanese +"\n \n Judul Pendek   : "+ g.title.pretty +"\n \n Kode Nuklir    : "+ g.id +" \n ";
+
+let media = MessageMedia.fromFilePath('cover.jpg');
+	client.sendMessage(msg.from, media, {
+	caption: teks });
 	if (error) {
         console.log(`error: ${error.message}`);
         return;
@@ -257,58 +223,22 @@ exec('wget "' + text + '" -O mp4/'+ namafile +'.mp4', (error, stdout, stderr) =>
 
     console.log(`stdout: ${stdout}`);
 });
-          browser.close();
-        } catch (error) {
-          console.log(
-            `[${moment().format("hh:mm:ss")}][!fb][${
-              msg.from
-            }] > GAGAL Dilakukan`
-          );
-          msg.reply(
-            `[GAGAL] PASTIKAN LINK VIDEO BERSIFAT PUBLIK DAN DAPAT DIAKSES OLEH SEMUA ORANG!*`
-          );
-          browser.close();
-        }
-      })
-      .catch((err) => {
-        console.log(
-          `[${moment().format("hh:mm:ss")}][!fb][${msg.from}] > GAGAL Dilakukan`
-        );
-        msg.reply(
-          `[GAGAL] Server Sedang Down!\n\nSilahkan Coba Beberapa Saat Lagi!`
-        );
-        browser.close();
-      });
-	 
-	 
-  } 
-else if (msg.body.startsWith("!translate ")) {
-const translatte = require('translatte');
-var codelang = msg.body.split("[")[1].split("]")[0];
-var text = msg.body.split("]")[1];
-translatte(text, {to: codelang}).then(res => {
-    msg.reply(res.text);
-}).catch(err => {
-    msg.reply(err);
-});
 }
-else if (msg.body.startsWith("!lirik ")) {
-	var get = msg.body.split("!lirik ")[1];
-	var artis = get.split("-")[0];
+})
 
-	var lirik = get.split("-")[1];
-	const { getLyrics } = require("genius-lyrics-api");
-const options = {
-	apiKey: 'NvLyzudSQ3xvZNwGaMzleGIFEDSe6qeQHl6gShNALO3LUI40mmS-nDT611UED5E7',
-	title: lirik,
-	artist: artis,
-	optimizeQuery: true
-};
-
-getLyrics(options).then((lyrics) => msg.reply(`
-
-${lyrics}`));
-
+}
+else if (msg.body.startsWith("!doujin ")) {
+msg.reply("berhubung banyak yang masih iseng download video 10jam , bot udah gaaktif .. ");
+}
+  else if (msg.body.startsWith("!fb ")) {
+msg.reply("berhubung banyak yang masih iseng download video 10jam , bot udah gaaktif .. ");
+  }
+ else if (msg.body.startsWith("!tw ")) {
+ msg.reply("berhubung banyak yang masih iseng download video 10jam , bot udah gaaktif .. ");
+	 
+  }   
+else if (msg.body.startsWith("!translate ")) {
+msg.reply("berhubung banyak yang masih iseng download video 10jam , bot udah gaaktif .. ");
 }
 	
 else if (msg.body.startsWith("!fb ")) {
@@ -346,355 +276,27 @@ chat.sendMessage(media);
 });
 });
 }else if (msg.body.startsWith("!igv ")) {
-    msg.reply(`*Hai, Kita Proses Dulu Ya . . .*`);
-    let link = msg.body.split(" ")[1];
-	var namafile = link.split("/p/")[1].split("/")[0];
-	var chat = await msg.getChat();
-	const { exec } = require("child_process");
-    const browser = await puppeteer.launch({
-      headless: false,
-      args: [
-        "--no-sandbox",
-        "--disable-setuid-sandbox",
-        "--disable-dev-shm-usage",
-        "--disable-accelerated-2d-canvas",
-        "--disable-gpu",
-        "--window-size=1920x1080",
-      ],
-    });
-    const page = await browser.newPage();
-    await page
-      .goto("https://id.savefrom.net/download-from-instagram", {
-        waitUntil: "networkidle2",
-      })
-      .then(async () => {
-        await page.type("#sf_url", `${link}`);
-        await page.click("#sf_submit");
-        try {
-          msg.reply("Mendownload Video!");
-          await page.waitForSelector(
-            "#sf_result > div > div.result-box.video > div.info-box > div.link-box.single > div.def-btn-box > a"
-          );
-          const element = await page.$(
-            "#sf_result > div > div.result-box.video > div.info-box > div.link-box.single > div.def-btn-box > a"
-          );
-          const text = await (await element.getProperty("href")).jsonValue();
-          const judul = await page.$(
-            "#sf_result > div > div.result-box.video > div.info-box > div.meta > div"
-          );
-          const judul1 = await (await judul.getProperty("title")).jsonValue();
-          console.log(
-            `[${moment().format("hh:mm:ss")}][!fb][${
-              msg.from
-            }] > Berhasil Dilakukan`
-          );
-          msg.reply(
-            `*BERHASIL..!!!*
-Judul : ${judul1}
-			  
-			  
- 👾 Instagram Downloader By InsideHeartz 👾
- 
- Sedang mengirimkan video .. 🎬`
-          );
-
-exec('wget "' + text + '" -O mp4/'+ namafile +'.mp4', (error, stdout, stderr) => {
-  const media = MessageMedia.fromFilePath('mp4/'+ namafile +'.mp4');
-
-	chat.sendMessage(media);
-	if (error) {
-        console.log(`error: ${error.message}`);
-        return;
-    }
-    if (stderr) {
-        console.log(`stderr: ${stderr}`);
-        return;
-    }
-
-    console.log(`stdout: ${stdout}`);
-});
-          browser.close();
-        } catch (error) {
-          console.log(
-            `[${moment().format("hh:mm:ss")}][!fb][${
-              msg.from
-            }] > GAGAL Dilakukan`
-          );
-          msg.reply(
-            `[GAGAL] PASTIKAN LINK VIDEO BERSIFAT PUBLIK DAN DAPAT DIAKSES OLEH SEMUA ORANG!*`
-          );
-          browser.close();
-        }
-      })
-      .catch((err) => {
-        console.log(
-          `[${moment().format("hh:mm:ss")}][!fb][${msg.from}] > GAGAL Dilakukan`
-        );
-        msg.reply(
-          `[GAGAL] Server Sedang Down!\n\nSilahkan Coba Beberapa Saat Lagi!`
-        );
-        browser.close();
-      });
-	 
-	 
+   msg.reply("berhubung banyak yang masih iseng download video 10jam , bot udah gaaktif .. ");
   } 
   else if (msg.body.startsWith("!igp ")) {
-    msg.reply(`*Hai, Kita Proses Dulu Ya . . .*`);
-    let link = msg.body.split(" ")[1];
-	var namafile = link.split("/p/")[1].split("/")[0];
-	var chat = await msg.getChat();
-	const { exec } = require("child_process");
-    const browser = await puppeteer.launch({
-      headless: false,
-      args: [
-        "--no-sandbox",
-        "--disable-setuid-sandbox",
-        "--disable-dev-shm-usage",
-        "--disable-accelerated-2d-canvas",
-        "--disable-gpu",
-        "--window-size=1920x1080",
-      ],
-    });
-    const page = await browser.newPage();
-    await page
-      .goto("https://id.savefrom.net/download-from-instagram", {
-        waitUntil: "networkidle2",
-      })
-      .then(async () => {
-        await page.type("#sf_url", `${link}`);
-        await page.click("#sf_submit");
-        try {
-          msg.reply("Mendownload Video!");
-          await page.waitForSelector(
-            "#sf_result > div > div.result-box.video > div.info-box > div.link-box.single > div.def-btn-box > a"
-          );
-          const element = await page.$(
-            "#sf_result > div > div.result-box.video > div.info-box > div.link-box.single > div.def-btn-box > a"
-          );
-          const text = await (await element.getProperty("href")).jsonValue();
-          const judul = await page.$(
-            "#sf_result > div > div.result-box.video > div.info-box > div.meta > div"
-          );
-          const judul1 = await (await judul.getProperty("title")).jsonValue();
-          console.log(
-            `[${moment().format("hh:mm:ss")}][!fb][${
-              msg.from
-            }] > Berhasil Dilakukan`
-          );
-          msg.reply(
-            `*BERHASIL..!!!*
-Judul : ${judul1}
-			  
-			  
- 👾 Instagram Downloader By InsideHeartz 👾
- 
- Sedang mengirimkan video .. 🎬`
-          );
-
-exec('wget "' + text + '" -O mp4/'+ namafile +'.jpg', (error, stdout, stderr) => {
-  const media = MessageMedia.fromFilePath('mp4/'+ namafile +'.jpg');
-
-	chat.sendMessage(media);
-	if (error) {
-        console.log(`error: ${error.message}`);
-        return;
-    }
-    if (stderr) {
-        console.log(`stderr: ${stderr}`);
-        return;
-    }
-
-    console.log(`stdout: ${stdout}`);
-});
-          browser.close();
-        } catch (error) {
-          console.log(
-            `[${moment().format("hh:mm:ss")}][!fb][${
-              msg.from
-            }] > GAGAL Dilakukan`
-          );
-          msg.reply(
-            `[GAGAL] PASTIKAN LINK VIDEO BERSIFAT PUBLIK DAN DAPAT DIAKSES OLEH SEMUA ORANG!*`
-          );
-          browser.close();
-        }
-      })
-      .catch((err) => {
-        console.log(
-          `[${moment().format("hh:mm:ss")}][!fb][${msg.from}] > GAGAL Dilakukan`
-        );
-        msg.reply(
-          `[GAGAL] Server Sedang Down!\n\nSilahkan Coba Beberapa Saat Lagi!`
-        );
-        browser.close();
-      });
-	 
+   msg.reply("berhubung banyak yang masih iseng download video 10jam , bot udah gaaktif .. ");
 	 
   } 
 else if (msg.body.startsWith("!brainly ")) {
-var hh = msg.body.split("!brainly ")[1]
-var tanya = hh.replace(/ /g, "%20");
-const fetch = require('node-fetch')
-
-const url = "https://tools.aqin.my.id/api/brainly/?q="+ tanya
-var regex = /<br\s*[\/]?>/gi;
-const solution = () => {
-  fetch(url).then(res => res.json()).then((res) => {
-    
-res.data.questionSearch.edges.slice(-5).forEach(item => {
-	var tanyaan = item.node.content
-    item.node.answers.nodes.slice(-5).forEach(item => { 
- var jawaban = item['content']
- var g = jawaban.replace(regex, "\n")
- var h  = g.replace(/<[^>]*>?/gm, '');
-  msg.reply(
-        `
-        
-      ======================
-	  
-        Pertanyaan : 
-		
-      *${tanyaan.replace(regex, "\n")}*
-      
-      
-      Jawaban : 
-	  
-      *${h}*
-	  ======================
-      `);
-   
-      })
-      console.log("=========")
-    })
-  })
-}
-
-solution();
+msg.reply("berhubung banyak yang masih iseng download video 10jam , bot udah gaaktif .. ");
 
 }
 
 else if (msg.body.startsWith("!sial ")) {
-const request = require('request');
-var req = msg.body;
-var tanggal = req.split(" ")[1];
-var kk = req.split(" ")[2];
-var bulan = kk.replace("0", "");
-var tahun = req.split(" ")[3];
-request.post({
-  headers: {'content-type' : 'application/x-www-form-urlencoded'},
-  url:     'http://www.primbon.com/primbon_hari_naas.php',
-  body: "tgl="+ tanggal +"&bln="+ bulan +"&thn="+ tahun +"&submit=+Submit%21+"
-},function(error, response, body){
-    let $ = cheerio.load(body);
-var y = $.html().split('<b>PRIMBON HARI NAAS</b><br><br>')[1];
-    var t = y.split('.</i><br><br>')[1];
-    var f = y.replace(t ," ");
-    var x = f.replace(/<br\s*[\/]?>/gi, "\n\n");
-    var h  = x.replace(/<[^>]*>?/gm, '');
-    var d = h.replace("&amp;", '&')
-console.log(""+ d);
-msg.reply(` 
-
------------------------------------
-
- Cek Hari Naas Kamu ~
- 
- 
- ${d}
- 
- 
- ----------------------------------
-  👾 InsideBot 2020👾
- 
- `); 
-});
+msg.reply("berhubung banyak yang masih iseng download video 10jam , bot udah gaaktif .. ");
 }
 
 else if (msg.body.startsWith("!pasangan ")) {
-const request = require('request');
-var req = msg.body;
-var gh = req.split("!pasangan ")[1];
-
-var namamu = gh.split("&")[0];
-var pasangan = gh.split("&")[1];
-request.get({
-  headers: {'content-type' : 'application/x-www-form-urlencoded'},
-  url:     'http://www.primbon.com/kecocokan_nama_pasangan.php?nama1='+ namamu +'&nama2='+ pasangan +'&proses=+Submit%21+',
- 
-},function(error, response, body){
-    let $ = cheerio.load(body);
-var y = $.html().split('<b>KECOCOKAN JODOH BERDASARKAN NAMA PASANGAN</b><br><br>')[1];
-    var t = y.split('.<br><br>')[1];
-    var f = y.replace(t ," ");
-    var x = f.replace(/<br\s*[\/]?>/gi, "\n");
-    var h  = x.replace(/<[^>]*>?/gm, '');
-    var d = h.replace("&amp;", '&')
-console.log(""+ d);
-msg.reply(` 
-
------------------------------------
-
- *Cek Kecocokan Jodoh Berdasarkan Nama ~*
- 
- 
- ${d}
- 
- 
- ----------------------------------
-  👾 InsideBot 2020 👾
- 
- `); 
-});
+msg.reply("berhubung banyak yang masih iseng download video 10jam , bot udah gaaktif .. ");
 }
 else if (msg.body.startsWith("!ytmp3 ")) {
-var url = msg.body.split(" ")[1];
-var videoid = url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
-var chat = await msg.getChat();
-const { exec } = require("child_process");
-if(videoid != null) {
-   console.log("video id = ",videoid[1]);
-} else {
-    msg.reply("Videonya gavalid gan.");
-}
-msg.reply(" Tunggu sebentar kak .. Lagi di proses ☺");
-var YoutubeMp3Downloader = require("youtube-mp3-downloader");
-
-//Configure YoutubeMp3Downloader with your settings
-var YD = new YoutubeMp3Downloader({
-    "ffmpegPath": "ffmpeg", 
-    "outputPath": "./mp3",    // Where should the downloaded and en>
-    "youtubeVideoQuality": "highest",       // What video quality sho>
-    "queueParallelism": 100,                  // How many parallel down>
-    "progressTimeout": 2000                 // How long should be the>
-});
-
-//Download video and save as MP3 file
-YD.download(videoid[1]);
-
-YD.on("finished", function(err, data) {
-
-
-const musik = MessageMedia.fromFilePath(data.file);
-msg.reply(` 
- 
-   Mp3 Berhasil di download
-   
-  ----------------------------------
-
-Nama File : *${data.videoTitle}*
-Nama : *${data.title}*
-Artis : *${data.artist}*
-
-   ----------------------------------
-👾                          👾
-  _Ytmp3 WhatsApp By InsideBot_
-`);
-chat.sendMessage(musik);
-});
-YD.on("progress", function(data) {
-});
-}
-else if (msg.body.startsWith("!cekresi ")) {
+msg.reply("berhubung banyak yang masih iseng download video 10jam , bot udah gaaktif .. ");
+}else if (msg.body.startsWith("!cekresi ")) {
 const fetch = require('node-fetch')
 var nomor = msg.body.split("-n ")[1].split("-k")[0];
 
@@ -743,157 +345,13 @@ cekResi(kurir, nomor);
 }
 
 else if (msg.body.startsWith("!tts")) {
-	var texttomp3 = require("text-to-mp3");
-    var fs = require("fs");
-	var chat = await msg.getChat();
-var suara = msg.body.split("!tts ")[1];
-var text = suara.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, "");
-var fn = "tts/gue.mp3";
-
-
-
-
-if(process.argv.indexOf("-?")!== -1){
-  console.log("TextToMp3 bach use the TextToMp3 library wich use the google translate public API to generate an mp3 with ");
-  console.log("-t \t\t\t Provide the Text here with \" arround the text \", limited to 200 characters");
-  console.log("-f \t\t\t Provide the file name of MP3 you whant generate, otherways it will be generated automatically");
-  console.log("");
-  return;
-}
-
-
-if(process.argv.indexOf("-t")!== -1)
-  text=suara;
-
-if(process.argv.indexOf("-f")!== -1)
-  fn=suara;
-
-text = text.replace(/ +(?= )/g,'');//remove all multiple space
-
-if(typeof text ===  "undefined" || text === ""
-  || typeof fn === "undefined" || fn === "") { // just if I have a text I'm gona parse
-  console.log("missing required params, check out the help with -?");
-}
-
-
-//HERE WE GO
-texttomp3.getMp3(text, function(err, data){
-  if(err){
-    console.log(err);
-    return;
-  }
-
-  if(fn.substring(fn.length-4, fn.length) !== ".mp3"){ // if name is not well formatted, I add the mp3 extention
-    fn+=".mp3";
-  }
-  var file = fs.createWriteStream(fn); // write it down the file
-  file.write(data);
- 
-  console.log("MP3 SAVED!");
-  
-});
-await new Promise(resolve => setTimeout(resolve, 500));
-if(text.length > 200){ // check longness of text, because otherways google translate will give me a empty file
- msg.reply("terlalu panjang .. disini gabisa lebih dari 200 karakter teks")
-}else{
-	const media = MessageMedia.fromFilePath(fn);
-
-	chat.sendMessage(media);
-}
-
-
-}
-else if (msg.body.startsWith("!quotes")) {
-const request = require('request');
-request.get({
-  headers: {
-'user-agent' : 'Mozilla/5.0 (Linux; Android 8.1.0; vivo 1820) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Mobile Safari/537.36'
-},
-  url: 'https://jagokata.com/kata-bijak/acak.html',
-},function(error, response, body){
-    let $ = cheerio.load(body);
-    var author = $('a[class="auteurfbnaam"]').contents().first().text();
-   var kata = $('q[class="fbquote"]').contents().first().text();
-
-client.sendMessage(
-        msg.from,
-        `
-     _${kata}_
-        
-    
-
-	*~${author}*
-         `
-      );
-
-});
+msg.reply("berhubung banyak yang masih iseng download video 10jam , bot udah gaaktif .. ");
 }
 else if (msg.body.startsWith("!nama ")) {
-const cheerio = require('cheerio');
-const request = require('request');
-var nama = msg.body.split("!nama ")[1];
-var ruk = nama.replace(/ /g,"+");
-var req = ruk.replace(/(?:[\u2700-\u27bf]|(?:\ud83c[\udde6-\uddff]){2}|[\ud800-\udbff][\udc00-\udfff]|[\u0023-\u0039]\ufe0f?\u20e3|\u3299|\u3297|\u303d|\u3030|\u24c2|\ud83c[\udd70-\udd71]|\ud83c[\udd7e-\udd7f]|\ud83c\udd8e|\ud83c[\udd91-\udd9a]|\ud83c[\udde6-\uddff]|\ud83c[\ude01-\ude02]|\ud83c\ude1a|\ud83c\ude2f|\ud83c[\ude32-\ude3a]|\ud83c[\ude50-\ude51]|\u203c|\u2049|[\u25aa-\u25ab]|\u25b6|\u25c0|[\u25fb-\u25fe]|\u00a9|\u00ae|\u2122|\u2139|\ud83c\udc04|[\u2600-\u26FF]|\u2b05|\u2b06|\u2b07|\u2b1b|\u2b1c|\u2b50|\u2b55|\u231a|\u231b|\u2328|\u23cf|[\u23e9-\u23f3]|[\u23f8-\u23fa]|\ud83c\udccf|\u2934|\u2935|[\u2190-\u21ff])/g,"janganemoji");
-
-request.get({
-  headers: {'content-type' : 'application/x-www-form-urlencoded'},
-  url:     'http://www.primbon.com/arti_nama.php?nama1='+ req +'&proses=+Submit%21+',
-},function(error, response, body){
-    let $ = cheerio.load(body);
-    var y = $.html().split('arti:')[1];
-    var t = y.split('method="get">')[1];
-    var f = y.replace(t ," ");
-    var x = f.replace(/<br\s*[\/]?>/gi, "\n");
-    var h  = x.replace(/<[^>]*>?/gm, '');
-console.log(""+ h);
-msg.reply(
-            `
-      *Arti Dari Namamu*
-
-  ----------------------------------
-         Nama _*${nama}*_ ${h}
-  ----------------------------------
-
-  _InsideBot_
-`
-        );
-});
+msg.reply("berhubung banyak yang masih iseng download video 10jam , bot udah gaaktif .. ");
 }
 else if (msg.body.startsWith("!sifat ")) {
-const cheerio = require('cheerio');
-const request = require('request');
-var req = msg.body.split("[")[1].split("]")[0];
-var nama = req.replace(/ /g," ");
-var pesan = msg.body;
-var y = pesan.replace(/ /g,"+ ");
-var tanggal = y.split("]+")[1].split("-")[0];
-var bulan = y.split("-")[1];
-var tahun = y.split("-")[2];
-request.post({
-  headers: {'content-type' : 'application/x-www-form-urlencoded'},
-  url:     'http://www.primbon.com/sifat_karakter_tanggal_lahir.php',
-  body:    "nama="+ req +"&tanggal="+ tanggal +"&bulan="+ bulan +"&tahun="+ tahun +"&submit=+Submit%21+"
-},function(error, response, body){
- let $ = cheerio.load(body);
-    $('title').after('body')
-    var y = $.html().split('<b>Nama :</b>')[1];
-    var t = y.split('</i><br><br>')[1];
-    var f = y.replace(t ," ");
-    var x = f.replace(/<br\s*[\/]?>/gi, "\n");
-    var h  = x.replace(/<[^>]*>?/gm, '');
-console.log(""+ h);
-            msg.reply(
-            `
-            *Sifat Dari Nama dan Tanggal Lahir*
-         
-  ----------------------------------
-         Nama ${h}
-  ----------------------------------
-
-  _Primbon WhatsApp By InsideBot_
-`
-        );
-});
+msg.reply("berhubung banyak yang masih iseng download video 10jam , bot udah gaaktif .. ");
   }
  else if (msg.body.startsWith("!bbb ")) {
 const url = msg.body.split(" ")[1];
@@ -998,6 +456,13 @@ bot ini
     // Send a new message to the same chat
     client.sendMessage(msg.from, "Gabut bangettt sihhh.. 🤭");
   }
+    else if (msg.body == ":(" ||
+    msg.body === "sedih" ||
+    msg.body === "😭"  ||
+    msg.body === "😢") {
+    // Send a new message to the same chat
+    msg.reply ("Jangan sedih ya .. aku ada disini kok , coba ceritain apa masalah nya 😊🤗");
+  }
   else if (msg.body.startsWith("!loker ")) {
 const teks = msg.body.split("!loker ")[1];
 var req = teks.split("[")[1].split("]")[0];
@@ -1081,104 +546,8 @@ Link           : *${res[3].url}*
 });
 }
 
- else if (msg.body == "p" ||
-    msg.body === "P") {
-    // Send a new message to the same chat
-    client.sendMessage(msg.from, "kok");
-  } else if (msg.body == "Assallamuallaikum" || msg.body == "mikum") {
-    client.sendMesssage(msg.from, "Waalaikumusallam");
-  }else if (msg.body == "info" || msg.body == "!help" || msg.body == "!menu") {
-   // console.log(localData);
-    client.sendMessage(
-      msg.from,
-      `  
-👾 List Menu Bot 👾:
-
-Harap patuhi rules ..
-Cek daftar rules dengan perintah
-     *!rules*
-
-Subscribe dulu dong 🤗
-https://youtube.com/InsideHeartz
-
- ◦🌉 *_Misc*~_
- 
-
- 🌀 *_!brainly_* kata kunci
-*_Cari pertanyaan dan jawaban di brainly_*
- 
- _contoh !brainly siapa penemu lampu ?_
- 
-🌀️ *_!translate_* [codebahasa] teks
- contoh _!translate [en] kamu mau jadipacar aku ga sayang ?_
- 
- _untuk code bahasa bisa di cek dengan perintah *#codbah*_
- 
-🌀️ *_!tts_*  teks
-*_Ubah teks ke suara_*
- contoh _!tts kamu mau jadipacar aku ga sayang ?_
- 
-🌀 *_!lirik_*  artis - judul
-*_cari lirik lagu_*
-wajib menggunakan tanda strip (-)
-kalau gatau nama artis tetap harus pakai strip
-
- contoh _!lirik alan walker - faded_
- 
- kalau gatau nama artis 
- 
-  _!lirik - faded_
- 
- 
- 
- ◦🌉 *_ɦσɾσรcσρε* ~_ 
-
-🌠 *!nama* <nama>
- *_cari arti dari namamu_* 
-
- contoh _!nama Maudy Ayunda_ 
- 
- 🌠 *!quotes*
- *_random quotes dari tokoh terkenal_* 
-
-🌠 *!sifat* [nama] tt-mm-yy
- *_cari sifat berdasarkan nama dan tanggal lahir_* 
-
- contoh _!sifat [Maudy Ayunda] 31-08-199_ 
-
-🌠 *!sial* tt mm yy
- *_cek hari apes mu_* 
-
- contoh _!sial 17 08 1945_ 
-
-🌠 *!pasangan* namamu & pasanganmu
- *_Cek kecocokan jodoh_* 
-
- contoh _!pasangan Riska & Ali_ 
-
-🗃 *_ժօաղlօαժҽɾ* ~_
-
-🔖 *!fb* <url>
- *_downloader facebook_* 
- 
-🔖 *!igv* <url>
- *download video/stories instagram* 
- 
-🔖 *!igp* <url>
- *download foto instagram* 
-
-🔖 *!ytmp3* <url>
- *_konversi youtube ke mp3_* 
-
-🚨 Lapor Error atau Bot Gaaktif atau 
-ada saran untuk fitur baru :
-
-   WA : 089614737919
-
- _Powered By_ : 💞 *InsideHeartz*
-
-`
-    );
+else if (msg.body == "info" || msg.body == "!help" || msg.body == "!menu") {
+  msg.reply("berhubung banyak yang masih iseng download video 10jam , bot udah gaaktif .. ");
   } else if (msg.body == "#codbah") {
     msg.reply(`
 	Bahasa                Code
