@@ -10,7 +10,6 @@ const delay = require("delay");
 let urlen = require("urlencode"); 
 const puppeteer = require("puppeteer"); 
 const cheerio = require("cheerio");
-const corona = require("./CoronaService/covid19.js"); 
 const SESSION_FILE_PATH = "./session.json";
 // file is included here
 let sessionCfg;
