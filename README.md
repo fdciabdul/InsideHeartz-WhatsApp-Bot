@@ -40,6 +40,8 @@ Install the dependencies:
 
 after running it you need to scan the qr
 
+### Features
+
  Feature  | Status |
 | ------------- | ------------- |
 | Facebook Download | Oke|
@@ -49,61 +51,23 @@ after running it you need to scan the qr
 
 
 
-## Bot Whatsapp Command 
-```
+### Bot Whatsapp Command 
+
+## Download Command
+
+  - `!ytmp3 [URL] `: Download Youtube and Convert to mp3
+  - `!yt [URL]`: Download Youtube Mp4
+  - `!fb [URL]`: Download Facebook Videos
+  - `!tiktok [URL]`: Download Tiktok Videos
+  - `!igv [URL]`: Download Instagram Videos
+  - `!igp [URL]`: Download Instagram Pictures
   
-◦•●◉✿ ஜ۩۞۩ஜ 𝐈𝐧𝐬𝐢𝐝𝐞 𝐁𝐨𝐭 ஜ۩۞۩ஜ  ✿◉●•◦
-
-  
-
-
-👾 List Menu Bot :
-
- ◦🌉 _ɦσɾσรcσρε ~_ 
-
-🌠 !nama <nama>
- _cari arti dari namamu_ 
-
- contoh _!nama Maudy Ayunda_ 
+### Fun Mode Command
+  - `!nama`: Show about yourname
+  - `!sifat`: Showing about your attitude
+  - `!pasangan `: Show about your relationship
+  - `!tts`: Convert text to voice
  
- 🌠 !quotes
- _random quotes dari tokoh terkenal_
+Support Me :)
 
-🌠 !sifat [nama] tt-mm-yy
- _cari sifat berdasarkan nama dan tanggal lahir_ 
-
- contoh _!sifat [Maudy Ayunda] 31-08-199_ 
-
-🌠 !sial* tt mm yy
- _cek hari apes mu_
-
- contoh _!sial 17 08 1945_ 
-
-🌠 !pasangan namamu & pasanganmu
- _Cek kecocokan jodoh_ 
-
- contoh _!pasangan Riska & Ali_ 
-
-🗃 _ժօաղlօαժҽɾ ~_
-
-🔖 *!fb* <url>
- *downloader facebook_* 
- 
-🔖 *!ig* <url>
- *downloader instagram* 
-
-🔖 *!ytmp3* <url>
- *konversi youtube ke mp3_* 
-
-
-      🅜🅞🅡🅔    
-   🅕🅔🅐🅣🅤🅡🅔🅢 🅘🅢 
-🅒🅞🅞🅜🅘🅝🅖 🅢🅞🅞🅝
-
- _Powered By_ : 💞 *InsideHeartz*
-
-```
-         
-Open Donation Via
- Gopay , Paypal , Or Doge :v
-089614737919
+[![Support Me Via Gopay , DANA , OVO](https://github.com/fdciabdul/InsideHeartz-WhatsApp-Bot/raw/master/Logo%20GoPay%20(PNG-240p)%20-%20FileVector69.png)](https://saweria.co/donate/fdciabdul)
