@@ -19,7 +19,7 @@ Clone this project
 
 ```bash
 > git clone https://github.com/fdciabdul/termux-whatsapp-bot
-> cd termux-whatsapp-bot
+> cd InsideHeartz-WhatsApp-Bot
 
 ```
 
@@ -28,8 +28,14 @@ Install the dependencies:
 ```bash
 > npm i
 ```
+Dont forget install ffmpeg and wget 
 
+if u are using windows , u can download in here
 
+and move a folder ffmpeg to `C:\`
+and wget.exe to `system32`
+
+also add a PATH ffmpeg to Environtment Variable 
 
 ### Usage
 1. run the Whatsapp bot
