@@ -97,5 +97,6 @@ after running it you need to scan the qr
 
 ```
          
-Open Donation Via Gopay 😀 
+Open Donation Via
+ Gopay , Paypal , Or Doge :v
 089614737919
