@@ -70,4 +70,4 @@ after running it you need to scan the qr
  
 Support Me :)
 
-[![Support Me Via Gopay , DANA , OVO](https://github.com/fdciabdul/InsideHeartz-WhatsApp-Bot/raw/master/Logo%20GoPay%20(PNG-240p)%20-%20FileVector69.png)](https://saweria.co/donate/fdciabdul)
+[![Support Me Via Gopay , DANA , OVO](https://www.pngmart.com/files/7/Donation-Transparent-PNG.png)](https://saweria.co/donate/fdciabdul)
