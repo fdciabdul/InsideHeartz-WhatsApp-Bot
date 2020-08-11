@@ -31,6 +31,7 @@ Install the dependencies:
 Dont forget install ffmpeg and wget 
 
 if u are using windows , u can download in here
+https://drive.google.com/file/d/1SugE8vjfOyyW3VTRqsxlW_GJh6EKQ19X/view?usp=drivesdk
 
 and move a folder ffmpeg to `C:\`
 and wget.exe to `system32`
