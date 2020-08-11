@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://github.com/sabattle/CalypsoBot"><img src="./data/images/Calypso_Title.png"></a>
+  <a href="https://github.com/fdciabdul/InsideHeartz-WhatsApp-Bot"><img src="https://w7.pngwing.com/path/88/1/171/mecha-anime-cyborg-robot-cyborg-fa40e1c7afd7b834a9160a065108ca48.png"></a>
   <br>
   Calypso Discord Bot
   <br>
@@ -24,7 +24,7 @@
 <p align="center">
   <a href="#features">Features</a>
   •
-  <a href="#installation">Installation</a>
+  <a href="#install">Installation</a>
   •
   <a href="#set-up">Set Up</a>
   •
