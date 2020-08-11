@@ -22,13 +22,11 @@
 </div>
 
 <p align="center">
-  <a href="#features">Features</a>
+  <a href="#features">Fitur</a>
   •
-  <a href="#install">Installation</a>
+  <a href="#install">Install</a>
   •
   <a href="#set-up">Set Up</a>
-  •
-  <a href="#colors">Colors</a>
   •
   <a href="#license">License</a>
   •
@@ -37,10 +35,7 @@
 
 ### Install
 
-
-
-then ..
-Clone this project
+Clone project ini
 
 ```bash
 > git clone https://github.com/fdciabdul/termux-whatsapp-bot
@@ -48,31 +43,42 @@ Clone this project
 
 ```
 
-Install the dependencies:
+Install dependencies:
 
 ```bash
 > npm i
 ```
-Dont forget install ffmpeg and wget 
+jangan lupa install ffmpeg sama wget 
 
-if u are using windows , u can download in here
-https://drive.google.com/file/d/1SugE8vjfOyyW3VTRqsxlW_GJh6EKQ19X/view?usp=drivesdk
+kalo kelen pake rdp windows , jan lupa download binary penjunjang
+dibawah ini
+<a href="https://drive.google.com/file/d/1SugE8vjfOyyW3VTRqsxlW_GJh6EKQ19X/view?usp=drivesdk"> Download </a>
 
-and move a folder ffmpeg to `C:\`
-and wget.exe to `system32`
+pindahin folder ffmpeg ke `C:\`
+dan file wget.exe ke `system32`
 
-also add a PATH ffmpeg to Environtment Variable 
+add juga path ffmpeg di environtment variable nya
+agar bisa dipanggil di cmd 
+path ffmpeg nya yaitu
+```
+C:\ffmpeg\bin
+
+```
+
+kalo kelen pengguna linux , jangan lupa ganti path ffmpeg pada fitur youtube mp3 
+kadi `usr/bin/ffmpeg`
 
 ### Usage
-1. run the Whatsapp bot
+1. menjalankan bot
 
 ```bash
 > node index.js
 ```
 
-after running it you need to scan the qr
+kalo status bot nya udah berjalan , silahkan scan qr nya 
+di aplikasi whatsapp
 
-### Features
+### Fitur 
 
  Feature  | Status |
 | ------------- | ------------- |
@@ -80,8 +86,14 @@ after running it you need to scan the qr
 | Tiktok Downlod | Soon |
 | WhatsAnime | Oke |
 | Youtube Mp3|  Oke|
+| Brainly |  Oke|
+| Wiki|  Oke|
+| Text To Voice|  Oke|
+| Youtube MP4|  Oke|
+| NHentai|  Oke|
+| Horoscope menu|  Oke|
 
-
+dan masih banyak lagi
 
 ### Bot Whatsapp Command 
 
@@ -94,12 +106,19 @@ after running it you need to scan the qr
   - `!igv [URL]`: Download Instagram Videos
   - `!igp [URL]`: Download Instagram Pictures
   
-### Fun Mode Command
+## Fun Mode Command
   - `!nama`: Show about yourname
   - `!sifat`: Showing about your attitude
-  - `!pasangan `: Show about your relationship
+  - `!pasangan `: Check about your relationshop
   - `!tts`: Convert text to voice
+  - `!sial`: Check about your bad day
  
+## Educational Command
+  - `!brainly`: Convert text to voice
+  - `!wiki`: cari apapun di wiki
+  - `!tts`: Convert text to voice
+
+
 Support Me :)
 
 [![Support Me Via Gopay , DANA , OVO](https://www.pngmart.com/files/7/Donation-Transparent-PNG.png)](https://saweria.co/donate/fdciabdul)
