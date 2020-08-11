@@ -2,7 +2,7 @@
   <br>
   <a href="https://github.com/fdciabdul/InsideHeartz-WhatsApp-Bot"><img src="https://w7.pngwing.com/path/88/1/171/mecha-anime-cyborg-robot-cyborg-fa40e1c7afd7b834a9160a065108ca48.png"></a>
   <br>
-  Calypso Discord Bot
+  Inside Heartz WhatsApp Bot
   <br>
 </h1>
 
