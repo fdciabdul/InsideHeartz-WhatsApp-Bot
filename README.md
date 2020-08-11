@@ -1,14 +1,39 @@
-## Whatsapp Bot With Some Unique Features 🍞
-![Twitter](https://img.shields.io/twitter/follow/fdciabdul?style=social)
-![Commit](https://img.shields.io/github/commit-activity/y/fdciabdul/termux-whatsapp-bot?style=flat-square)
-![Fork](https://img.shields.io/github/forks/fdciabdul/termux-whatsapp-bot?style=social)
+<h1 align="center">
+  <br>
+  <a href="https://github.com/sabattle/CalypsoBot"><img src="./data/images/Calypso_Title.png"></a>
+  <br>
+  Calypso Discord Bot
+  <br>
+</h1>
+
+<h3 align=center>A multipurpose whatsapp bot built with <a href=https://github.com/discordjs/discord.js>whatsapp-web.js</a></h3>
 
 
-This is a bot , sure this is a bot ! 
+<div align=center>
 
-## Getting Started
 
-This project require MQTT broker, nodeJS.
+  <a href="https://github.com/discordjs">
+    <img src="https://img.shields.io/badge/license-GNU%20GPL%20v3-green" alt="shield.png">
+
+  <a href="https://github.com/sabattle/CalypsoBot/blob/develop/LICENSE">
+    <img src="https://img.shields.io/badge/license-GNU%20GPL%20v3-green" alt="shield.png">
+  </a>
+
+</div>
+
+<p align="center">
+  <a href="#features">Features</a>
+  •
+  <a href="#installation">Installation</a>
+  •
+  <a href="#set-up">Set Up</a>
+  •
+  <a href="#colors">Colors</a>
+  •
+  <a href="#license">License</a>
+  •
+  <a href="#credits">Credits</a>
+</p>.
 
 ### Install
 
