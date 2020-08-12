@@ -5,7 +5,6 @@ const { Client, MessageMedia } = require("whatsapp-web.js");
 const mqtt = require("mqtt"); 
 const listen = mqtt.connect("mqtt://test.mosquitto.org"); 
 const fetch = require("node-fetch"); 
-const User = require("./user.js"); 
 const delay = require("delay"); 
 let urlen = require("urlencode"); 
 const puppeteer = require("puppeteer"); 
@@ -1598,54 +1597,4 @@ yang hanya punya kuota chat haha
   }
 });
 
-listen.on("message", (topic, message) => {
-  console.log(`[ ${moment().format("HH:mm:ss")} ] MQTT: ${message.toString()}`);
-  fs.readFile("./CoronaService/user.json", "utf-8", function(err, data) {
-    if (err) throw err;
-    const userData = JSON.parse(data);
-    for (var i = 0; i < userData.length; i++) {
-      let number = userData[i].user;
-      // number = number.includes('@c.us') ? number : `${number}@c.us`;
-      setTimeout(function() {
-        console.log(
-          `[ ${moment().format("HH:mm:ss")} ] Send Corona Update to ${number}`
-        );
-        if (message.toString() === "New Update!") {
-          fs.readFile("./CoronaService/data.json", "utf-8", function(
-            err,
-            data
-          ) {
-            if (err) throw err;
-            const localData = JSON.parse(data);
-            const newCases = localData.NewCases === "" ? 0 : localData.NewCases;
-            const newDeaths =
-              localData.NewDeaths === "" ? 0 : localData.NewDeaths;
-            client.sendMessage(
-              number,
-              `
-                    *COVID-19 Update!!*
-Negara: ${localData.Country}
 
-Kasus aktif: ${localData.ActiveCases}
-Total Kasus: ${localData.TotalCases}
-*Kasus Baru: ${newCases}*
-        
-Meninggal: ${localData.TotalDeaths}
-*Meninggal Baru: ${newDeaths}*
-        
-Total Sembuh: ${localData.TotalRecovered}
-                    
-Dicek pada: ${moment()
-                .format("LLLL")
-                .replace("pukul", "|")} WIB
-Sumber: 
-_https://www.worldometers.info/coronavirus/_
-                    `
-            );
-          });
-        }
-        // Delay 3 Sec
-      }, i * 3000);
-    }
-  });
-});
