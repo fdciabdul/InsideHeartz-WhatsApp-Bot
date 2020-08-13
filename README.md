@@ -6,7 +6,7 @@
   <br>
 </h1>
 
-<h3 align=center>A multipurpose whatsapp bot built with <a href=https://github.com/discordjs/discord.js>whatsapp-web.js</a></h3>
+<h3 align=center>A multipurpose whatsapp bot built with <a href="https://github.com/pedroslopez/whatsapp-web.js">whatsapp-web.js</a></h3>
 
 
 <div align=center>
