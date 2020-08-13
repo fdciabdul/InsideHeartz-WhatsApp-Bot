@@ -12,10 +12,10 @@
 <div align=center>
 
 
-  <a href="https://github.com/discordjs">
+  <a href="https://github.com/pedroslopez/whatsapp-web.js">
     <img src="https://img.shields.io/badge/whatsapp--web.js-V.1.7%205-green?style=flat&logo=npm" alt="shield.png">
 
-  <a href="https://github.com/sabattle/CalypsoBot/blob/develop/LICENSE">
+  <a href="https://github.com/fdciabdul">
     <img src="https://img.shields.io/badge/license-GNU%20GPL%20v3-green" alt="shield.png">
   </a>
 
