@@ -140,4 +140,4 @@ Mohon jangan di jual lagi ya source ini :)
 
 Jika berkenan , boleh dong beliin kopi kapal api :v
 
-<a href="https://saweria.co/donate/fdciabdul"><img src="https://www.pngmart.com/files/7/Donation-Transparent-PNG.png" widht ="50" height="50"></a>
+<a href="https://saweria.co/donate/fdciabdul"><img src="https://www.pngmart.com/files/7/Donation-Transparent-PNG.png" widht ="350" align="center" height="350"></a>
