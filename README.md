@@ -52,7 +52,7 @@ Install dependencies:
 ```
 jangan lupa install ffmpeg sama wget 
 
-kalo kelen pake rdp windows , jan lupa download binary penjunjang
+kalo kelen pake rdp windows , jan lupa download binary penunjang
 dibawah ini
 <a href="https://drive.google.com/file/d/1SugE8vjfOyyW3VTRqsxlW_GJh6EKQ19X/view?usp=drivesdk"> Download </a>
 
