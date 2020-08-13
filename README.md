@@ -100,6 +100,15 @@ dan masih banyak lagi
 ### Bot Whatsapp Command 
 
 ## Download Command
+( Hanya admin )
+
+- `!promote`: Buat ngejadiin member sebagai admin
+- `!kick`: Kick member
+- `!demote`: Hapus status admin
+- `!desc`: Ubah deskripsi grup
+- `!judul`: Ubah judul grup
+
+## Download Command
 
   - `!ytmp3 [URL] `: Download Youtube and Convert to mp3
   - `!yt [URL]`: Download Youtube Mp4
