@@ -40,7 +40,7 @@
 Clone project ini
 
 ```bash
-> git clone https://github.com/fdciabdul/termux-whatsapp-bot
+> git clone https://github.com/fdciabdul/InsideHeartz-WhatsApp-Bot
 > cd InsideHeartz-WhatsApp-Bot
 
 ```
