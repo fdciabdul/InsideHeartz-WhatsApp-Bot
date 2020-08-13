@@ -122,12 +122,13 @@ dan masih banyak lagi
   - `!igp [URL]`: Download Instagram Pictures
   
 ## Fun Mode Command
-  - `!nama`: Arti nama
-  - `!sifat`: Cek sifat mu
-  - `!pasangan `: Cek kecocokan pasangan
-  - `!tts`: Convert text to voice
-  - `!sial`: Cek hari sial
- 
+  - `!nama text`: Arti nama
+  - `!sifat [nama] tt mm yy`: Cek sifat mu
+  - `!pasangan text & text `: Cek kecocokan pasangan
+  - `!tts text`: Convert text to voice
+  - `!sial tt-mm-yy `: Cek hari sial
+ - `!lirik artist - tittle `: Cek lirik
+
 ## Educational Command
   - `!brainly`: Convert text to voice
   - `!wiki`: cari apapun di wiki
