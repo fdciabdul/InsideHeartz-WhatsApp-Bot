@@ -134,6 +134,10 @@ dan masih banyak lagi
   - `!tts`: Convert text to voice
 
 
-Support Me :)
+## Support Me :)
 
-[![Support Me Via Gopay , DANA , OVO](https://www.pngmart.com/files/7/Donation-Transparent-PNG.png)](https://saweria.co/donate/fdciabdul)
+Mohon jangan di jual lagi ya source ini :)
+
+Jika berkenan , boleh dong beliin kopi kapal api :v
+
+<a href="https://saweria.co/donate/fdciabdul"><img src=https://www.pngmart.com/files/7/Donation-Transparent-PNG.png" widht ="50" height="50"></a>
