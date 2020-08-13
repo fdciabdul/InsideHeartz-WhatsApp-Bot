@@ -22,13 +22,18 @@
 </div>
 
 <p align="center">
-  <a href="#fitur">Fitur</a>
+  <a href="#features">Features</a>
   •
-  <a href="#install">Install</a>
+  <a href="#installation">Installation</a>
   •
-  <a href="#command>Set Up</a>
-  
-</p>.
+  <a href="#set-up">Set Up</a>
+  •
+  <a href="#colors">Colors</a>
+  •
+  <a href="#license">License</a>
+  •
+  <a href="#credits">Credits</a>
+</p>
 
 ### Install
 
