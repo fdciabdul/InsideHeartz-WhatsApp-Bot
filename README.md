@@ -68,7 +68,11 @@ C:\ffmpeg\bin
 ```
 
 kalo kelen pengguna linux , jangan lupa ganti path ffmpeg pada fitur youtube mp3 
-kadi `usr/bin/ffmpeg`
+jadi `usr/bin/ffmpeg`
+
+dan jangan lupa ubah path chrome nya
+jadi 
+`usr/bin/google-chrome-stable`
 
 ### Usage
 1. menjalankan bot
