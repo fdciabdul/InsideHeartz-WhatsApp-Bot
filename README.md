@@ -62,7 +62,7 @@ dan file wget.exe ke `system32`
 add juga path ffmpeg di environtment variable nya
 agar bisa dipanggil di cmd 
 path ffmpeg nya yaitu
-```
+```batch
 C:\ffmpeg\bin
 
 ```
