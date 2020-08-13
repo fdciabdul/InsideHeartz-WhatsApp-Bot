@@ -109,11 +109,11 @@ dan masih banyak lagi
   - `!igp [URL]`: Download Instagram Pictures
   
 ## Fun Mode Command
-  - `!nama`: Show about yourname
-  - `!sifat`: Showing about your attitude
-  - `!pasangan `: Check about your relationshop
+  - `!nama`: Arti nama
+  - `!sifat`: Cek sifat mu
+  - `!pasangan `: Cek kecocokan pasangan
   - `!tts`: Convert text to voice
-  - `!sial`: Check about your bad day
+  - `!sial`: Cek hari sial
  
 ## Educational Command
   - `!brainly`: Convert text to voice
