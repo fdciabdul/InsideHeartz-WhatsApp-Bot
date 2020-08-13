@@ -6,12 +6,8 @@ const { Client, MessageMedia } = require("whatsapp-web.js");
 const mqtt = require("mqtt"); 
 const listen = mqtt.connect("mqtt://test.mosquitto.org"); 
 const fetch = require("node-fetch"); 
-const User = require("./user.js"); 
-const delay = require("delay"); 
-let urlen = require("urlencode"); 
 const puppeteer = require("puppeteer"); 
 const cheerio = require("cheerio");
-const corona = require("./CoronaService/covid19.js"); 
 const SESSION_FILE_PATH = "./session.json";
 // file is included here
 let sessionCfg;
