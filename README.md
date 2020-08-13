@@ -85,6 +85,9 @@ kalo status bot nya udah berjalan , silahkan scan qr nya
 di aplikasi whatsapp
 
 ### Fitur 
+ketik !menu untuk menampilkan fitur
+
+<img src="https://github.com/fdciabdul/termux-whatsapp-bot/raw/master/Screenshot_2020_0613_032927.jpg"></img>
 
  Feature  | Status |
 | ------------- | ------------- |
