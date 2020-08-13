@@ -99,7 +99,7 @@ dan masih banyak lagi
 
 ### Bot Whatsapp Command 
 
-## Download Command
+## Admin Command
 ( Hanya admin )
 
 - `!promote`: Buat ngejadiin member sebagai admin
