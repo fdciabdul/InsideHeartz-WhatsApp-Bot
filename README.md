@@ -133,6 +133,15 @@ dan masih banyak lagi
   - `!wiki`: cari apapun di wiki
   - `!tts`: Convert text to voice
 
+### Free Version
+
+Ya ini adalah free version , tak ada support dan 
+ gabisa request fitur :D
+
+kalau mau request fitur boleh contact :
+
+Di : <a href="https://wa.me/6289614737919"> WhatsApp</a>
+Di : <a href="https://fb.com/fdciabdul"> Facebook</a>
 
 ## Support Me :)
 
