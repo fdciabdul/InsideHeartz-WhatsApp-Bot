@@ -1599,12 +1599,7 @@ chat.sendMessage(media);
     msg.body === "donasi ") {
     // Send a new message to the same chat
     client.sendMessage(msg.from, ` 
-	Jika merasa bot ini bermanfaat boleh 
-	 Bantu memperpanjang server bot nya 
-	 dan agar tetap berjalan dan tidak error
-	 
-	 😊 Jika ingin membantu boleh chat kesini
-	 wa.me/6285225145663
+	null
 	`);
   }
      else if (msg.body == "!rules" ||
