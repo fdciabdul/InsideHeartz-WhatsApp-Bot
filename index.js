@@ -533,7 +533,7 @@ client.sendMessage(media);
 Judul : ${judul1}
 			  
 			  
- _ Facebook Downloader By LawBot _`
+ _ Facebook Downloader By InsideHeartz _`
           );
 		  
 exec('wget "' + text + '" -O mp4/'+ namafile +'.mp4', (error, stdout, stderr) => {
@@ -721,7 +721,7 @@ chat.sendMessage(media);
 Judul : ${judul1}
 			  
 			  
- _ Instagram Downloader By LawBot _
+ _ Instagram Downloader By InsideHeartz _
  
  Sedang mengirimkan video .. 🎬`
           );
@@ -814,7 +814,7 @@ exec('wget "' + text + '" -O mp4/'+ namafile +'.mp4', (error, stdout, stderr) =>
 Judul : ${judul1}
 			  
 			  
- _ Instagram Downloader By LawBot _
+ _ Instagram Downloader By InsideHeartz _
  
  Sedang mengirimkan video .. 🎬`
           );
@@ -932,7 +932,7 @@ msg.reply(`
  
  
  ----------------------------------
-  _ LawBot 2020_
+  _ InsideHeartz 2020_
  
  `); 
 });
@@ -969,7 +969,7 @@ msg.reply(`
  
  
  ----------------------------------
-  _ LawBot 2020 _
+  _ InsideHeartz 2020 _
  
  `); 
 });
@@ -1212,7 +1212,7 @@ Artis : *${data.artist}*
 
    ----------------------------------
 👾                          👾
-  _Ytmp3 WhatsApp By LawBot
+  _Ytmp3 WhatsApp By InsideHeartz
 `);
 chat.sendMessage(musik);
 });
@@ -1363,7 +1363,7 @@ msg.reply(
          Nama _*${nama}*_ ${h}
   ----------------------------------
 
-  _LawBot_
+  _InsideHeartz_
 `
         );
 });
@@ -1399,7 +1399,7 @@ console.log(""+ h);
          Nama ${h}
   ----------------------------------
 
-  _Primbon WhatsApp By LawBot_
+  _Primbon WhatsApp By InsideHeartz_
 `
         );
 });
