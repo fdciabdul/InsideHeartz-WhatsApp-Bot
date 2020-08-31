@@ -142,15 +142,3 @@ dan masih banyak lagi
 Ya ini adalah free version , tak ada support dan 
  gabisa request fitur :D
 
-kalau mau request fitur boleh contact :
-
-Di : <a href="https://wa.me/6289614737919"> WhatsApp</a>
-Di : <a href="https://fb.com/fdciabdul"> Facebook</a>
-
-## Support Me :)
-
-Mohon jangan di jual lagi ya source ini :)
-
-Jika berkenan , boleh dong beliin kopi kapal api :v
-
-<a href="https://saweria.co/donate/fdciabdul"><img src="https://www.pngmart.com/files/7/Donation-Transparent-PNG.png" widht ="350" align="center" height="350"></a>
