@@ -28,7 +28,7 @@
     "translatte": "^2.5.8",
     "urlencode": "^1.1.0",
     "webpage": "^0.3.0",
-    "whatsapp-web.js": "^1.7.0",
+    "whatsapp-web.js": "^1.8.0",
     "youtube-mp3-downloader": "^0.6.8"
   },
   "devDependencies": {},
