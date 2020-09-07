@@ -609,12 +609,6 @@ const options = {
 };
 
 
-getSong(options).then((song) =>
-	msg.reply(`
-	${song.albumArt}
-	${song.lyrics}`);
-);
-
 
 
 }
