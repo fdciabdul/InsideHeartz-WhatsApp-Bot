@@ -1,8 +1,6 @@
-//code by InsideHeartz
+// code by InsideHeartz
 // github.com/fdciabdul
-// please don't sell this fucking scripts
 
-// jika menjualnya ya boleh boleh ajasi , tapi hasilnya bagi bagi dong kan saya gadapet apa apa kwkwkw
 const fs = require("fs"); 
 const moment = require("moment");
 const qrcode = require("qrcode-terminal"); 
@@ -1006,6 +1004,7 @@ client.sendMessage(
 
 
 // Horoscope Menu
+
 // Arti Nama
 
 else if (msg.body.startsWith("!nama ")) {
@@ -1152,7 +1151,7 @@ client.sendMessage(
 
   
 // Chat Bot SimSimi
- // FITUR PREMIUM INI HEHE
+// FITUR PREMIUM INI HEHE
 	
 	// Soalnya pake API PREMIUM >:(
   
