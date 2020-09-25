@@ -95,11 +95,9 @@ ketik !menu untuk menampilkan fitur
 | Tiktok Downlod | Soon |
 | WhatsAnime | Oke |
 | Youtube Mp3|  Oke|
-| Brainly |  Oke|
 | Wiki|  Oke|
 | Text To Voice|  Oke|
 | Youtube MP4|  Oke|
-| NHentai|  Oke|
 | Horoscope menu|  Oke|
 
 dan masih banyak lagi
@@ -121,16 +119,17 @@ dan masih banyak lagi
   - `!yt [URL]`: Download Youtube Mp4
   - `!fb [URL]`: Download Facebook Videos
   - `!tiktok [URL]`: Download Tiktok Videos
-  - `!igv [URL]`: Download Instagram Videos
-  - `!igp [URL]`: Download Instagram Pictures
-  
+  - `!ig [URL]`: Download Instagram Videos
+
 ## Fun Mode Command
+  - `!play nama lagu` : memutar musik dari youtube berdasarkan kata kunci
   - `!nama text`: Arti nama
-  - `!sifat [nama] tt mm yy`: Cek sifat mu
   - `!pasangan text & text `: Cek kecocokan pasangan
   - `!tts text`: Convert text to voice
-  - `!sial tt-mm-yy `: Cek hari sial
- - `!lirik artist - tittle `: Cek lirik
+  - `ptl1` : Random gambar gambar cewe cantik
+  - `ptl2` : Random gambar gambar cowo gans 
+  - `randomanime` : Random gambar gambar anime
+  - `!searchimage` : Pencarian gambar
 
 ## Educational Command
   - `!fakta` : random fakta
