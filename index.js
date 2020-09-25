@@ -1141,7 +1141,7 @@ client.sendMessage(
 // Chat Bot SimSimi
  // FITUR PREMIUM INI HEHE
 	
-	kAlau ingin menggunaakan nya
+	// Soalnya pake API PREMIUM >:(
   
 });
   
