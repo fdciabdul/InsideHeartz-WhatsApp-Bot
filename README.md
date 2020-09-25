@@ -137,8 +137,4 @@ dan masih banyak lagi
   - `!wiki`: cari apapun di wiki
   - `!tts`: Convert text to voice
 
-### Free Version
-
-Ya ini adalah free version , tak ada support dan 
- gabisa request fitur :D
 
