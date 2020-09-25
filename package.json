@@ -1,0 +1,36 @@
+{
+  "name": "bot",
+  "version": "3.4.5",
+  "description": "Multi Purposional WhatsApp bot",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
+  },
+  "dependencies": {
+    "commander": "^6.1.0",
+    "html-to-text": "^5.1.1",
+    "indo-news-scraper": "^1.4.0",
+    "removd": "^1.1.1",
+    "video-url-link": "^0.1.4",
+    "webp-converter": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fdciabdul/InsideHeartz-WhatsApp-Bot.git"
+  },
+  "keywords": [
+    "whatsapp",
+    "bot"
+  ],
+  "author": "Abdul Muttaqin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fdciabdul/InsideHeartz-WhatsApp-Bot/issues"
+  },
+  "homepage": "https://github.com/fdciabdul/InsideHeartz-WhatsApp-Bot#readme"
+}
