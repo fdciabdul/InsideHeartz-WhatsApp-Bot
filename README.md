@@ -133,6 +133,7 @@ dan masih banyak lagi
  - `!lirik artist - tittle `: Cek lirik
 
 ## Educational Command
+  - `!fakta` : random fakta
   - `!brainly`: Convert text to voice
   - `!wiki`: cari apapun di wiki
   - `!tts`: Convert text to voice

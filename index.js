@@ -600,6 +600,19 @@ exec('wget "' + b.link + '" -O mp4/fbvid.mp4', (error, stdout, stderr) => {
 });
 }
 
+// random fakta unik
+// pajaar - 2020
+else if (msg.body == "!fakta") {
+const fetch = require("node-fetch"); 
+fetch('https://raw.githubusercontent.com/pajaar/grabbed-results/master/pajaar-2020-fakta-unik.txt')
+    .then(res => res.text())
+    .then(body => {
+	let tod = body.split("\n");
+	let pjr = tod[Math.floor(Math.random() * tod.length)];
+	msg.reply(pjr);
+	});
+}
+
 // Download Youtube Video
 else if (msg.body.startsWith("!yt ")) {
 const url = msg.body.split(" ")[1];
