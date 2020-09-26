@@ -1147,6 +1147,43 @@ client.sendMessage(
 }
 
 
+// Berita Indonesia
+	  else if (msg.body.startsWith("!berita ")) {
+	   const keyword = msg.body.split("!berita ")[1];
+const { Detik } = require('indo-news-scraper');
+const imageToBase64 = require('image-to-base64');
+var nomorlink = Math.floor(Math.random() * 5);
+Detik.scrap(keyword).then(res => {
+ console.log(res);
+ var gambar = res[0].img;
+ var judul = res[0].title;
+ var url = res[0].url;
+ 
+   imageToBase64(gambar) // Path to the image
+        .then(
+            (response) => {
+ 
+    const media = new MessageMedia('image/jpeg', response);
+    client.sendMessage(msg.from, media, {
+      caption: `
+Judul Berita :
+ *${judul}*
+
+Baca Berita Disini:
+${url}
+` });
+            }
+			
+        )
+        .catch(
+            (error) => {
+                console.log(error); // Logs an error if there was one
+            }
+        )
+    
+});
+   }
+
 
 
   
