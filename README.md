@@ -1,7 +1,7 @@
 <h1 align="center">
 
   <br>
-  <a href="https://github.com/fdciabdul/InsideHeartz-WhatsApp-Bot"><img src="https://booth.pximg.net/b745d4a2-a7a0-4826-96e8-55e09ebe32f1/i/1280359/5074b2e0-6e4e-41b0-973e-be0e44bb82cd_base_resized.jpg"></a>
+  <a href="https://github.com/fdciabdul/InsideHeartz-WhatsApp-Bot"><img src="https://telegra.ph/file/a0e0e03c2c77300d9c53a.jpg"></a>
   <br>
   Inside Heartz WhatsApp Bot
   <br>
