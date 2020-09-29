@@ -23,13 +23,11 @@ For English on here : <a href="https://github.com/fdciabdul/InsideHeartz-WhatsAp
 </div>
 
 <p align="center">
-  <a href="#features">Features</a>
+  <a href="#fitur">Features</a>
   •
-  <a href="#installation">Installation</a>
+  <a href="#install">Installation</a>
   •
-  <a href="#set-up">Set Up</a>
-  •
-  <a href="#colors">Colors</a>
+  <a href="#perintah">Perintah</a>
   •
   <a href="#license">License</a>
   •
@@ -103,7 +101,7 @@ ketik !menu untuk menampilkan fitur
 
 dan masih banyak lagi
 
-### Bot Whatsapp Command 
+### Perintah 
 
 ## Admin Command
 ( Hanya admin )
