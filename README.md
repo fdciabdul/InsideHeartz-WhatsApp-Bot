@@ -19,6 +19,9 @@ For English on here : <a href="https://github.com/fdciabdul/InsideHeartz-WhatsAp
   <a href="https://github.com/fdciabdul">
     <img src="https://img.shields.io/badge/license-GNU%20GPL%20v3-green" alt="shield.png">
   </a>
+[![License: Artistic-2.0](https://img.shields.io/badge/License-Artistic%202.0-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)
+[![npm version](https://badge.fury.io/js/whatsapp-web.js.svg)](https://badge.fury.io/js/discord.js)[![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![HitCount](http://hits.dwyl.io/fdciabdul/InsideHeartz-WhatsApp-Bot.svg)](http://hits.dwyl.io/fdciabdul/tmuxdcbot)
 
 </div>
 
