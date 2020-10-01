@@ -6,8 +6,7 @@
   Inside Heartz WhatsApp Bot
   <br>
 </h1>
-
-<h3 align=center>A multipurpose whatsapp bot built with <a href="https://github.com/pedroslopez/whatsapp-web.js">whatsapp-web.js</a></h3>
+ <h3 align=center>A multipurpose whatsapp bot built with <a href="https://github.com/pedroslopez/whatsapp-web.js">whatsapp-web.js</a></h3>
 
 For English on here : <a href="https://github.com/fdciabdul/InsideHeartz-WhatsApp-Bot/blob/master/README_EN.MD"> English </a>
 <div align=center>
@@ -15,6 +14,7 @@ For English on here : <a href="https://github.com/fdciabdul/InsideHeartz-WhatsAp
 
   <a href="https://github.com/pedroslopez/whatsapp-web.js">
     <img src="https://img.shields.io/badge/whatsapp--web.js-V.1.7%205-green?style=flat&logo=npm" alt="shield.png">
+<img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badges/">
 
   <a href="https://github.com/fdciabdul">
     <img src="https://img.shields.io/badge/license-GNU%20GPL%20v3-green" alt="shield.png">
