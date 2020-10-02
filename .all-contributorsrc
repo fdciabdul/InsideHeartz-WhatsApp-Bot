@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "pajaar",
+      "name": "pajaR_19",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/53967072?v=4",
+      "profile": "https://pajaar.my.id",
+      "contributions": [
+        "content"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "InsideHeartz-WhatsApp-Bot",
+  "projectOwner": "fdciabdul",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
