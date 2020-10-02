@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "fdciabdul",
+      "name": "Freethinker",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/31664438?v=4",
+      "profile": "http://fdciabdul.vercel.app",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "InsideHeartz-WhatsApp-Bot",
+  "projectOwner": "fdciabdul",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
