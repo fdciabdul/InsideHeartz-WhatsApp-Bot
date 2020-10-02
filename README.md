@@ -128,6 +128,8 @@ dan masih banyak lagi
   - `ptl1` : Random gambar gambar cewe cantik
   - `ptl2` : Random gambar gambar cowo gans 
   - `randomanime` : Random gambar gambar anime
+  - `!pantun`: Random pantun
+  - `!animehd`:Random HD anime
   - `!searchimage` : Pencarian gambar
 
 ## Educational Command

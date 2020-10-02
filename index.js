@@ -382,7 +382,13 @@ else if (msg.body == "!admin") {
    
 *!randomanime* = untuk melihat gambar anime secara random
 
+*!animehd* = untuk melihat gambar anime HD secara random v2
+
 *!quotes* : Melihat quotes dari tokoh terkenal
+
+*!pantun* : Melihat gombalan pantun pakboy
+
+*!fakta* : Melihat fakta unik secara random
 
 *!play nama lagu*
 contoh: *!play whatever it takes*
@@ -397,8 +403,8 @@ contoh: *!play whatever it takes*
 
 *!chord nama lagu* : Menampilkan Chord Gitar
 
-*!searchimage kata kunci* : Cari gambar berdasarkat kata
-contoh ( _*!sesrchimage kata bijak*_ )
+*!searchimage kata kunci* : Cari gambar berdasarkan kata
+contoh ( _*!searchimage kata bijak*_ )
 `);
  }
 else if (msg.body == "!menu2") {
@@ -607,6 +613,45 @@ fetch('https://raw.githubusercontent.com/pajaar/grabbed-results/master/pajaar-20
 	let pjr = tod[Math.floor(Math.random() * tod.length)];
 	msg.reply(pjr);
 	});
+}
+
+// random pantun
+// pajaar - 2020
+else if (msg.body == "!pantun") {
+const fetch = require("node-fetch"); 
+fetch('https://raw.githubusercontent.com/pajaar/grabbed-results/master/pajaar-2020-pantun-pakboy.txt')
+    .then(res => res.text())
+    .then(body => {
+	let tod = body.split("\n");
+	let pjr = tod[Math.floor(Math.random() * tod.length)];
+	console.log(pjr.replace(/pjrx-line/g,"\n"));
+	});
+}
+
+// random anime HD v2
+// pajaar 2020
+else if (msg.body == "!animehd" ){
+const fetch = require("node-fetch"); 
+const imageToBase64 = require('image-to-base64');
+fetch('https://raw.githubusercontent.com/pajaar/grabbed-results/master/pajaar-2020-gambar-anime.txt')
+    .then(res => res.text())
+    .then(body => {
+	let tod = body.split("\n");
+	let pjr = tod[Math.floor(Math.random() * tod.length)];
+imageToBase64(pjr) // Image URL
+    .then(
+        (response) => {
+const media = new MessageMedia('image/jpeg', response);
+client.sendMessage(msg.from, media, {
+caption: `Hey...` });
+        }
+    )
+    .catch(
+        (error) => {
+            console.log(error); // Logs an error if there was one
+        }
+    )
+});
 }
 
 // Download Youtube Video
