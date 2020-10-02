@@ -1,6 +1,5 @@
 <h1 align="center">
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
   <br>
@@ -14,6 +13,7 @@
 For English on here : <a href="https://github.com/fdciabdul/InsideHeartz-WhatsApp-Bot/blob/master/README_EN.MD"> English </a>
 <div align=center>
 
+<img src="https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square"/>
 
   <a href="https://github.com/pedroslopez/whatsapp-web.js">
     <img src="https://img.shields.io/badge/whatsapp--web.js-V.1.7%205-green?style=flat&logo=npm" alt="shield.png">
