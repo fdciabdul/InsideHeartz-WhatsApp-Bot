@@ -103,6 +103,7 @@ ketik !menu untuk menampilkan fitur
 | Random Fakta unik |  ✔️|  !fakta |
 | Search Image By Keyword|  ✔️|  !searchimage `keyword` |
 | Random Anime Images|  ✔️|  !randomanime |
+| Wikipedia|  ✔️|  !wiki `keyword` |
 
 ## Premium Features ( cuz i spend a lot time of this )
 | Fitur        | Status | Command | 
