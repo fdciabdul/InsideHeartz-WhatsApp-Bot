@@ -152,7 +152,8 @@ Thanks goes to these wonderful people
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://pajaar.my.id"><img src="https://avatars0.githubusercontent.com/u/53967072?v=4" width="100px;" alt=""/><br /><sub><b>pajaR_19</b></sub></a><br /><a href="#content-pajaar" title="Content">🖋</a></td>
+<td align="center"><a href="https://pajaar.my.id"><img src="https://avatars0.githubusercontent.com/u/31664438?s=460&u=251f36d7ab0fb4a74b162be7b18f6cdca8a74f8c&v=4" width="100px;" alt=""/><br /><sub><b>fdciabdul</b></sub></a><br /><a href="#content-abdul" title="Content">😎</a></td>
+    <td align="center"><a href="https://pajaar.my.id"><img src="https://avatars0.githubusercontent.com/u/53967072?v=4" width="100px;" alt=""/><br /><sub><b>pajaR_19</b></sub></a><br /><a href="#content-pajaar" title="Content">🤤👍</a></td>
   </tr>
 </table>
 
