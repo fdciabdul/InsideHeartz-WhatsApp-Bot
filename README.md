@@ -88,6 +88,7 @@ di aplikasi whatsapp
 
 ### Fitur 
 ketik !menu untuk menampilkan fitur
+
 | Fitur        | Status | Command | 
 | --------------- |:---------:|:---:|
 | Facebook Download | ✔️| !fb `url` |
@@ -99,7 +100,7 @@ ketik !menu untuk menampilkan fitur
 | Penyegar Timelane 1|  ✔️| !ptl1|
 | Penyear Timelane 2|  ✔️|  !ptl2 |
 
-dan masih banyak lagi
+ ***dan masih banyak lagi***
 
 ### Perintah 
 
@@ -144,7 +145,7 @@ dan masih banyak lagi
 
 ## Contributors ✨
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Thanks goes to these wonderful people 
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -159,4 +160,3 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
