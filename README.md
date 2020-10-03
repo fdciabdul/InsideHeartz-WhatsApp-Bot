@@ -125,6 +125,7 @@ dan masih banyak lagi
 
 ## Fun Mode Command
   - `!play nama lagu` : memutar musik dari youtube berdasarkan kata kunci
+  - `!lirik nama lagu` : menampilkan lirik lagu berdasarkan judul
   - `!nama text`: Arti nama
   - `!pasangan text & text `: Cek kecocokan pasangan
   - `!tts text`: Convert text to voice
