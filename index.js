@@ -12,6 +12,8 @@ const SESSION_FILE_PATH = "./session.json";
 const request = require("request");
 const urlencode = require("urlencode");
 const yts = require("./lib/cmd.js");
+const config = require("./config.js");
+
 // file is included here
 let sessionCfg;
 
@@ -21,7 +23,7 @@ if (fs.existsSync(SESSION_FILE_PATH)) {
 client = new Client({	  
     
 	     puppeteer: {
-        executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
+        executablePath: config.chrome_path,
         headless: true,
 		args: [
       "--log-level=3", // fatal only
@@ -560,7 +562,7 @@ var YoutubeMp3Downloader = require("youtube-mp3-downloader");
 
 //Configure YoutubeMp3Downloader with your settings
 var YD = new YoutubeMp3Downloader({
-    "ffmpegPath": "ffmpeg", 
+    "ffmpegPath": config.ffmpeg_path, 
     "outputPath": "./mp3",    // Where should the downloaded and en>
     "youtubeVideoQuality": "highest",       // What video quality sho>
     "queueParallelism": 100,                  // How many parallel down>
