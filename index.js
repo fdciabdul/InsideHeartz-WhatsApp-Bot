@@ -403,6 +403,9 @@ contoh: *!play whatever it takes*
 
 *!chord nama lagu* : Menampilkan Chord Gitar
 
+*!lirik nama lagu* : Menampilkan lirik lagu
+contoh: *!lirik lemon tree*
+
 *!searchimage kata kunci* : Cari gambar berdasarkan kata
 contoh ( _*!searchimage kata bijak*_ )
 `);
@@ -615,6 +618,18 @@ fetch('https://raw.githubusercontent.com/pajaar/grabbed-results/master/pajaar-20
 	});
 }
 
+// lirik
+else if (msg.body.startsWith("!lirik ")) {
+var request = require("request");
+let judul = msg.body.split(" ")[1];
+request.get({
+  headers: {'content-type' : 'application/x-www-form-urlencoded'},
+  url: "http://tololbgt.coolpage.biz/lirik.php?judul="+judul
+},function(error, response, body){
+msg.reply(body.replace(/pjr-enter/g,"\n"));
+});
+}
+
 // random pantun
 // pajaar - 2020
 else if (msg.body == "!pantun") {
@@ -624,7 +639,7 @@ fetch('https://raw.githubusercontent.com/pajaar/grabbed-results/master/pajaar-20
     .then(body => {
 	let tod = body.split("\n");
 	let pjr = tod[Math.floor(Math.random() * tod.length)];
-	console.log(pjr.replace(/pjrx-line/g,"\n"));
+	msg.reply(pjr.replace(/pjrx-line/g,"\n"));
 	});
 }
 
