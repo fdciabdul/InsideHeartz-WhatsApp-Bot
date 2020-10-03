@@ -138,6 +138,8 @@ client.on('group_join', async (notification) => {
     client.sendMessage(number, `Hai perkenalkan aku Inside Bot, selamat datang di group ini`);
   
     const chats = await client.getChats();
+
+// ==== Getting Group Chat === //
     for (i in chats) {
         if (number == chats[i].id._serialized) {
             chat = chats[i];
@@ -337,7 +339,8 @@ const botTol = () => {
     // Send a new message as a reply to the current one
     msg.reply("Hallo kak , salam dari aku Simsimi , ada yang bisa di bantu ?");
   }
-// Menu List
+
+// ==========  Menu List
 
 else if (msg.body == "!menu") {
  client.sendMessage(msg.from,  `
@@ -362,7 +365,8 @@ https://chat.whatsapp.com/CD1DOWJsJXWJvhpY8ud4S5
 `);
 }
 
-// Admin Menu 
+// ========= Admin Menu 
+
 else if (msg.body == "!admin") {
  client.sendMessage(msg.from,  `
  *!subject* = Ganti nama grup.
@@ -374,7 +378,8 @@ else if (msg.body == "!admin") {
  `);
  }
  
- // Menu 1
+ //==========  Menu 1
+
  else if (msg.body == "!menu1") {
  client.sendMessage(msg.from,  `
  
