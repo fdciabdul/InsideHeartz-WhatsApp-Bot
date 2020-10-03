@@ -98,7 +98,22 @@ ketik !menu untuk menampilkan fitur
 | Youtube MP3  | ✔️ | !ytmp3 `url`|
 | Youtube Play Song|  ✔️| !play `keyword`|
 | Penyegar Timelane 1|  ✔️| !ptl1|
-| Penyear Timelane 2|  ✔️|  !ptl2 |
+| Penyegar Timelane 2|  ✔️|  !ptl2 |
+| Penyegar Timelane 2|  ✔️|  !ptl2 |
+| Random Fakta unik |  ✔️|  !fakta |
+| Search Image By Keyword|  ✔️|  !searchimage `keyword` |
+| Random Anime Images|  ✔️|  !randomanime |
+
+## Premium Features ( cuz i spend a lot time of this )
+| Fitur        | Status | Command | 
+| --------------- |:---------:|:---:|
+| Makalah downloader|  ✔️|  !makalah `keyword` |
+| Chatbot AI (Simsimi Based)|  ✔️|  all mesage except groups |
+| Lazada Flash Sale Check |  ✔️|  !lazflash |
+| Tokped Flash Sale Check |  ✔️|  !tokpedflash |
+| Shopee Flash Sale Check |  ✔️|  !shopflash |
+| PPOB ( beli pulsa , voucher , token , etc) based on Tripay , Midtrans |  ✔️|  !beli |
+| Periksa Data (Email , Password ) yang terleak |  ✔️|  !periksadata `email/password` |
 
  ***dan masih banyak lagi***
 
