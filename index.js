@@ -423,7 +423,7 @@ Command banned for 15 minutes`);
     
     
         }
-        else{
+ 
   if (msg.type == "ciphertext") {
     // Send a new message as a reply to the current one
     msg.reply("Hallo kak , salam dari aku Simsimi , ada yang bisa di bantu ?");
