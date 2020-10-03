@@ -810,7 +810,8 @@ chat.sendMessage(media);
 });
 
 }
-  // Download Instagram
+  
+   // ========= Download Instagram
 else if (msg.body.startsWith("!ig ")) {
 const imageToBase64 = require('image-to-base64');
 var link = msg.body.split("!ig ")[1];
@@ -868,7 +869,7 @@ let media = MessageMedia.fromFilePath('mp4/insta.mp4');
   
   /// Fun Menu
 
-  // Glow text maker 
+  //=========  Glow text maker 
   else if (msg.body.startsWith("!glowtext ")) {
     msg.reply("sebentarr.. kita proses dulu")
      var h = msg.body.split("!glowtext ")[1];
@@ -931,7 +932,7 @@ let media = MessageMedia.fromFilePath('mp4/insta.mp4');
    })();
   }
 
-// Text to mp3
+  //============= Text to mp3
   else if (msg.body.startsWith("!tts")) {
 	
     var texttomp3 = require("text-to-mp3");
@@ -993,7 +994,8 @@ let media = MessageMedia.fromFilePath('mp4/insta.mp4');
   
   }
 
-  // Penyegar TimeLine
+  //==========  Penyegar TimeLine
+
   else if (msg.body == "!ptl2" ){
     const imageToBase64 = require('image-to-base64');
     var items = ["ullzang boy", "cowo ganteng", "cogan", "korean boy"];
@@ -1058,7 +1060,7 @@ Hai Kak 😊` });
     });
     }
 	
-	// Search Image
+	//=========  Search Image
 	
 else if (msg.body.startsWith("!searchimage ")) {
 
@@ -1094,7 +1096,8 @@ Whoaaaa gambar di temukan 😲`  });
     });
     }
   
-  
+  // ======= Random Anime
+
   else if (msg.body == "!randomanime" ){
     const imageToBase64 = require('image-to-base64');
     var items = ["anime aesthetic", "anime cute", "anime", "kawaii anime"];
@@ -1127,7 +1130,8 @@ Whoaaaa gambar di temukan 😲` });
     });
     }
 	
-	// Quotes Terkenal
+	//=======  Quotes Terkenal
+
 	else if (msg.body == "!quotes") {
 const request = require('request');
 request.get({
@@ -1157,7 +1161,7 @@ client.sendMessage(
 
 // Horoscope Menu
 
-// Arti Nama
+//====== Arti Nama
 
 else if (msg.body.startsWith("!nama ")) {
 
@@ -1188,7 +1192,7 @@ msg.reply(
 });
 }
 
-// Cek Kecocokan Pasangan
+//========  Cek Kecocokan Pasangan
 else if (msg.body.startsWith("!pasangan ")) {
 var req = msg.body;
 var gh = req.split("!pasangan ")[1];
@@ -1299,7 +1303,8 @@ client.sendMessage(
 }
 
 
-// Berita Indonesia
+//=====  Berita Indonesia
+
 	  else if (msg.body.startsWith("!berita ")) {
 	   const keyword = msg.body.split("!berita ")[1];
 const { Detik } = require('indo-news-scraper');
@@ -1337,9 +1342,29 @@ ${url}
    }
 
 
+// === Edukasi menu
 
+else if (msg.body.startsWith("!wiki ")) {
+const cheerio = require('cheerio');
+const request = require('request');
+var yos = msg.body.split("!wiki ")[1]
+var jokowi = urlencode(yos.replace(/ /g, "%20"));
+var url = "https://id.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles="+ jokowi
+request.get({
+  headers: {'content-type' : 'application/x-www-form-urlencoded'},
+  url:     url,
+},function(error, response, body){
+    let $ = cheerio.load(body);
+    var d = JSON.parse(body);
+var fik = body.split('"extract":"')[1];
+
+msg.reply(fik)
+});
+
+}
   
 // Chat Bot SimSimi
+
 // FITUR PREMIUM INI HEHE
 	
 	// Soalnya pake API PREMIUM >:(
