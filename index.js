@@ -335,6 +335,95 @@ const botTol = () => {
     } 
 
 
+    var recentcmd = new Set();
+    var fspamm=new Set();
+    var sban= new Set();
+    var stickerspam=new Set();
+    var stp=new Set();
+    var loaded=0;
+    var counter=0;
+    if(msg.type=='sticker'){
+       if(!(msg.fromMe)){ 
+        const ur=msg.from;
+        if(msg.author!="undefined"){
+        const ur=msg.author;
+       }
+        let chat = await msg.getChat();
+        let info = client.info;
+        let aq = chat.participants.filter(x => x.id.user ==  info.me.user);
+        var contact = await msg.getContact();
+        if(chat.isGroup){
+        if(aq[0].isAdmin){
+        if(stickerspam.has(ur) && !(stp.has(ur))){
+            stp.add(ur);
+            msg.reply('You are spamming stickers! :]');
+            
+            if(contact.number == chat.owner.user){
+                msg.reply("Owner cannot be removed!");
+            }else{
+                setTimeout(()=>{
+                chat.removeParticipants([contact.id._serialized]);},1000);}
+            
+        }
+         
+        }}
+        stickerspam.add(ur);
+        setTimeout(() =>{
+    stickerspam.delete(ur);
+    stp.delete(ur);
+
+    },400);
+    }}
+    else if(msg.type=='video'){
+        if(!(msg.fromMe)){
+        const ur = msg.author || msg.from;
+        let chat = await msg.getChat();
+        let info = client.info;
+        let aq = chat.participants.filter(x => x.id.user ==  info.me.user);
+        var contact = await msg.getContact();
+        if(chat.isGroup){
+        if(aq[0].isAdmin){
+        if(stickerspam.has(ur) && !(stp.has(ur))){
+            stp.add(ur);
+            msg.reply('You are spamming!');
+            if(contact.number == chat.owner.user){
+                msg.reply("Owner cannot be removed!");
+            }else{
+                chat.removeParticipants([contact.id._serialized]);}
+            
+        }
+         
+        }}
+        stickerspam.add(ur);
+        setTimeout(() =>{
+    stickerspam.delete(ur);
+    stp.delete(ur);
+    },6000);
+    }
+  }
+    
+    else if(msg.body.startsWith("!") && counter<=4){
+        counter++;
+        const usr = msg.author || msg.from
+        
+    
+        if(recentcmd.has(usr) || sban.has(usr)){
+        if(!(fspamm.has(usr) || (sban.has(usr)))){
+        msg.reply('You are on cooldown!');
+        fspamm.add(usr);
+        var keyToFind = `${usr}`;
+    
+        
+}
+    else if(!(sban.has(usr))){
+        msg.reply(`WARNING: COMMAND SPAM DETECTED
+Command banned for 15 minutes`);
+        sban.add(usr);
+        }
+    
+    
+        }
+        else{
   if (msg.type == "ciphertext") {
     // Send a new message as a reply to the current one
     msg.reply("Hallo kak , salam dari aku Simsimi , ada yang bisa di bantu ?");
