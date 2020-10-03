@@ -88,19 +88,16 @@ di aplikasi whatsapp
 
 ### Fitur 
 ketik !menu untuk menampilkan fitur
-
-<img src="https://github.com/fdciabdul/termux-whatsapp-bot/raw/master/Screenshot_2020_0613_032927.jpg"></img>
-
- Feature  | Status |
-| ------------- | ------------- |
-| Facebook Download | Oke|
-| Tiktok Downlod | Soon |
-| WhatsAnime | Oke |
-| Youtube Mp3|  Oke|
-| Wiki|  Oke|
-| Text To Voice|  Oke|
-| Youtube MP4|  Oke|
-| Horoscope menu|  Oke|
+| Fitur        | Status | Command | 
+| --------------- |:---------:|:---:|
+| Facebook Download | ✔️| !fb `url` |
+| Instagram Download | ✔️ | !ig `url`|
+| Pinterest Download  | ✔️ | !pin `url`|
+| Youtube Download  | ✔️ | !yt `url`|
+| Youtube MP3  | ✔️ | !ytmp3 `url`|
+| Youtube Play Song|  ✔️| !play `keyword`|
+| Penyegar Timelane 1|  ✔️| !ptl1|
+| Penyear Timelane 2|  ✔️|  !ptl2 |
 
 dan masih banyak lagi
 
