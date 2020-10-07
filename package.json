@@ -30,7 +30,6 @@
     "whatsapp-web.js": "^1.8.0",
     "youtube-mp3-downloader": "^0.6.8"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "node index.js"
   },
