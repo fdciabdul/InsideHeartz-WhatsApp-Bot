@@ -9,11 +9,10 @@ const fetch = require("node-fetch");
 const puppeteer = require("puppeteer"); 
 const cheerio = require("cheerio");
 const SESSION_FILE_PATH = "./session.json";
-const request = require("request");
 const urlencode = require("urlencode");
 const yts = require("./lib/cmd.js");
 const config = require("./config.js");
-
+const axios = require("axios");
 // file is included here
 let sessionCfg;
 
@@ -577,13 +576,9 @@ YD.on("progress", function(data) {
 var teks = msg.body.split("!fb ")[1];
 const { exec } = require("child_process");
 var url = "http://api.fdci.se/sosmed/fb.php?url="+ teks;
-
-request.get({
-  headers: {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0'},
-  url:     url,
-},function(error, response, body){
-    let $ = cheerio.load(body);
-  var b = JSON.parse(body);
+axios.get(url)
+  .then((result) => {
+var b = JSON.parse(JSON.stringify(result.data));
 
  var teks = `
  Berhasil Mendownload 
@@ -629,11 +624,11 @@ fetch('https://raw.githubusercontent.com/pajaar/grabbed-results/master/pajaar-20
 else if (msg.body.startsWith("!lirik ")) {
 var request = require("request");
 let judul = msg.body.split(" ")[1];
-request.get({
-  headers: {'content-type' : 'application/x-www-form-urlencoded'},
-  url: "http://tololbgt.coolpage.biz/lirik.php?judul="+judul
-},function(error, response, body){
-msg.reply(body.replace(/pjr-enter/g,"\n"));
+var  url = "http://tololbgt.coolpage.biz/lirik.php?judul="+judul;
+axios.get(url)
+  .then((result) => {
+
+msg.reply(result.data.replace(/pjr-enter/g,"\n"));
 });
 }
 
@@ -730,20 +725,25 @@ const imageToBase64 = require('image-to-base64');
 var link = msg.body.split("!ig ")[1];
 var url = "http://api.fdci.se/sosmed/insta.php?url="+ link;
 const { exec } = require("child_process");
-request.get({
-  headers: {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0'},
-  url:     url,
-},function(error, response, body){
-    let $ = cheerio.load(body);
-  var b = JSON.parse(body);
-  
+
+function foreach(arr, func){
+  for(var i in arr){
+    func(i, arr[i]);
+  }
+}
+axios.get(url)
+  .then((result) => {
+var b = JSON.parse(JSON.stringify(result.data));
+ console.log(b.data[0].url) 
   var teks = ` Download Berhasil 
   
   Instagram Downloader By InsideHeartz`;
-  if(b.link == false){
+  if(b.url == false){
 	  msg.reply(" maaf Kak link nya gaada :P ");
-  }else if( b.link.indexOf(".jpg") >= 0){
-imageToBase64(b.link) // Path to the image
+  }else if( b.data[0][0].type == "foto"){
+	  
+foreach(b.data[0], function(i, v){
+imageToBase64(b.data[0][i].url) // Path to the image
     .then(
         (response) => {
             ; // "cGF0aC90by9maWxlLmpwZw=="
@@ -758,8 +758,11 @@ client.sendMessage(msg.from, media, {
             console.log(error); // Logs an error if there was one
         }
     )
-    }else if( b.link.indexOf(".mp4") >= 0){
-    	exec('wget "' + b.link + '" -O mp4/insta.mp4', (error, stdout, stderr) => {
+})
+    }else if(b.data[0][0].type == "video"){
+		
+foreach(b.data[0], function(i, v){
+    	exec('wget "' + b.data[0][i].url + '" -O mp4/insta.mp4', (error, stdout, stderr) => {
 
 let media = MessageMedia.fromFilePath('mp4/insta.mp4');
 	client.sendMessage(msg.from, media, {
@@ -775,9 +778,13 @@ let media = MessageMedia.fromFilePath('mp4/insta.mp4');
 
     console.log(`stdout: ${stdout}`);
 });
+})
 }
   
-});
+})
+  .catch((err) => {
+console.log(err);
+  })
 }
   
   /// Fun Menu
@@ -915,12 +922,9 @@ let media = MessageMedia.fromFilePath('mp4/insta.mp4');
     var cewe = items[Math.floor(Math.random() * items.length)];
     var url = "http://api.fdci.se/rep.php?gambar=" + cewe;
     
-    request.get({
-      headers: {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0'},
-      url:     url,
-    },function(error, response, body){
-        
-      var b = JSON.parse(body);
+   axios.get(url)
+  .then((result) => {
+var b = JSON.parse(JSON.stringify(result.data));
     var cewek =  b[Math.floor(Math.random() * b.length)];
     imageToBase64(cewek) // Path to the image
         .then(
@@ -947,12 +951,9 @@ Hai Manis 😊` });
     var cewe = items[Math.floor(Math.random() * items.length)];
     var url = "http://api.fdci.se/rep.php?gambar=" + cewe;
     
-    request.get({
-      headers: {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0'},
-      url:     url,
-    },function(error, response, body){
-        
-      var b = JSON.parse(body);
+ axios.get(url)
+  .then((result) => {
+    var b = JSON.parse(JSON.stringify(result.data));
     var cewek =  b[Math.floor(Math.random() * b.length)];
     imageToBase64(cewek) // Path to the image
         .then(
@@ -983,12 +984,10 @@ var req = urlencode(nama.replace(/ /g,"+"));
 
     var url = "http://api.fdci.se/rep.php?gambar=" + req;
     
-    request.get({
-      headers: {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0'},
-      url:     url,
-    },function(error, response, body){
-        
-      var b = JSON.parse(body);
+   axios.get(url)
+  .then((result) => {
+var b = JSON.parse(JSON.stringify(result.data));
+     
     var cewek =  b[Math.floor(Math.random() * b.length)];
     imageToBase64(cewek) // Path to the image
         .then(
@@ -1017,12 +1016,10 @@ Whoaaaa gambar di temukan 😲`  });
     var cewe = items[Math.floor(Math.random() * items.length)];
     var url = "http://api.fdci.se/rep.php?gambar=" + cewe;
     
-    request.get({
-      headers: {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0'},
-      url:     url,
-    },function(error, response, body){
-        
-      var b = JSON.parse(body);
+  axios.get(url)
+  .then((result) => {
+var b = JSON.parse(JSON.stringify(result.data));
+   
     var cewek =  b[Math.floor(Math.random() * b.length)];
     imageToBase64(cewek) // Path to the image
         .then(
@@ -1047,13 +1044,11 @@ Whoaaaa gambar di temukan 😲` });
 
 	else if (msg.body == "!quotes") {
 const request = require('request');
-request.get({
-  headers: {
-'user-agent' : 'Mozilla/5.0 (Linux; Android 8.1.0; vivo 1820) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Mobile Safari/537.36'
-},
-  url: 'https://jagokata.com/kata-bijak/acak.html',
-},function(error, response, body){
-    let $ = cheerio.load(body);
+
+var url = 'https://jagokata.com/kata-bijak/acak.html'
+axios.get(url)
+  .then((result) => {
+   let $ = cheerio.load(result.data);
     var author = $('a[class="auteurfbnaam"]').contents().first().text();
    var kata = $('q[class="fbquote"]').contents().first().text();
 
@@ -1080,11 +1075,10 @@ else if (msg.body.startsWith("!nama ")) {
 
 var nama = msg.body.split("!nama ")[1];
 var req = urlencode(nama.replace(/ /g,"+"));
-request.get({
-  headers: {'content-type' : 'application/x-www-form-urlencoded'},
-  url:     'http://www.primbon.com/arti_nama.php?nama1='+ req +'&proses=+Submit%21+',
-},function(error, response, body){
-    let $ = cheerio.load(body);
+var url = 'http://www.primbon.com/arti_nama.php?nama1='+ req +'&proses=+Submit%21+';
+axios.get(url)
+  .then((result) => {
+    let $ = cheerio.load(result.data);
     var y = $.html().split('arti:')[1];
     var t = y.split('method="get">')[1];
     var f = y.replace(t ," ");
@@ -1112,19 +1106,18 @@ var gh = req.split("!pasangan ")[1];
 
 var namamu = urlencode(gh.split("&")[0]);
 var pasangan = urlencode(gh.split("&")[1]);
-request.get({
-  headers: {'content-type' : 'application/x-www-form-urlencoded'},
-  url:     'http://www.primbon.com/kecocokan_nama_pasangan.php?nama1='+ namamu +'&nama2='+ pasangan +'&proses=+Submit%21+',
- 
-},function(error, response, body){
-    let $ = cheerio.load(body);
+var url= 'http://www.primbon.com/kecocokan_nama_pasangan.php?nama1='+ namamu +'&nama2='+ pasangan +'&proses=+Submit%21+';
+axios.get(url)
+  .then((result) => {
+
+    let $ = cheerio.load(result.data);
 var y = $.html().split('<b>KECOCOKAN JODOH BERDASARKAN NAMA PASANGAN</b><br><br>')[1];
     var t = y.split('.<br><br>')[1];
     var f = y.replace(t ," ");
     var x = f.replace(/<br\s*[\/]?>/gi, "\n");
     var h  = x.replace(/<[^>]*>?/gm, '');
     var d = h.replace("&amp;", '&')
-console.log(""+ d);
+
 msg.reply(` 
 
 -----------------------------------
@@ -1151,17 +1144,14 @@ function foreach(arr, func){
 }
 var hal = msg.body.split("!chord ")[1];
 var url = "http://app.chordindonesia.com/?json=get_search_results&exclude=date,modified,attachments,comment_count,comment_status,thumbnail,thumbnail_images,author,excerpt,content,categories,tags,comments,custom_fields&search="+ hal;
-request.get({
-  headers: {'User-Agent':'Mozilla/5.0 (X11; Linux x86_64; rv:74.0) Gecko/20100101 Firefox/74.0'},
-  url:     url,
-},function(error, response, body){
-    let $ = cheerio.load(body);
-var d = JSON.parse(body);
+axios.get(url)
+  .then((result) => {
+var d = JSON.parse(JSON.stringify(result.data));
 if (d.count == "0"){
 msg.reply("maaf lirik tidak ditemukan");
 }else{
 
-console.log(d)
+//console.log(d)
 var result =[];
 var y = 0;
 var nomor ="";
@@ -1186,6 +1176,9 @@ Silahkan pilih lagu , lalu ketik
 
 }
 })
+  .catch((err) => {
+console.log(err);
+  })
 }
 
 // Get Chord
@@ -1194,14 +1187,11 @@ Silahkan pilih lagu , lalu ketik
 const htmlToText = require('html-to-text');
 
 var id = msg.body.split("!chord ")[1];
-  var chord = "http://app.chordindonesia.com/?json=get_post&id="+ id;
-request.get({
-  headers: {'content-type' : 'application/x-www-form-urlencoded'},
- url: chord
-},function(error, response, body){
-    let $ = cheerio.load(body);
-var post = JSON.parse(body);
-var html = post.post.content;
+  var url = "http://app.chordindonesia.com/?json=get_post&id="+ id;
+axios.get(url)
+  .then((result) => {
+var d = JSON.parse(JSON.stringify(result.data));
+var html = d.post.content;
 const text = htmlToText.fromString(html, {
 noLinkBrackets: true,
 ignoreHref: true,
@@ -1263,15 +1253,14 @@ const request = require('request');
 var yos = msg.body.split("!wiki ")[1]
 var jokowi = urlencode(yos.replace(/ /g, "%20"));
 var url = "https://id.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles="+ jokowi
-request.get({
-  headers: {'content-type' : 'application/x-www-form-urlencoded'},
-  url:     url,
-},function(error, response, body){
-    let $ = cheerio.load(body);
-    var d = JSON.parse(body);
-var fik = body.split('"extract":"')[1];
-
-msg.reply(fik)
+axios.get(url)
+  .then((result) => {
+var d = JSON.parse(JSON.stringify(result.data));
+console.log(d.query.normalized[0]);
+var id = d.query.pages;
+id = Object.keys(id)[0];
+//console.log(d.query.pages[id].extract);
+msg.reply(d.query.pages[id].extract)
 });
 
 }
@@ -1281,6 +1270,7 @@ msg.reply(fik)
 // FITUR PREMIUM INI HEHE
 	
 	// Soalnya pake API PREMIUM >:(
+
   
-});
   
+})
