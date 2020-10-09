@@ -151,11 +151,12 @@ ketik !menu untuk menampilkan fitur
   - `!pantun`: Random pantun
   - `!animehd`:Random HD anime
   - `!searchimage` : Pencarian gambar
+  - `!chord` : Nyari chord gitar anjay
 
 ## Educational Command
-  - `!fakta` : random fakta
-  - `!brainly`: Convert text to voice
-  - `!wiki`: cari apapun di wiki
+  - `!fakta` : Random fakta
+  - `!brainly`: - 
+  - `!wiki`: Cari apapun di wiki
   - `!tts`: Convert text to voice
 
 
