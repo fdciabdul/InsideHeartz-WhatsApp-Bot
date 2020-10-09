@@ -16,7 +16,7 @@ For English on here : <a href="https://github.com/fdciabdul/InsideHeartz-WhatsAp
 <img src="https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square"/>
 
   <a href="https://github.com/pedroslopez/whatsapp-web.js">
-    <img src="https://img.shields.io/badge/whatsapp--web.js-V.1.7%205-green?style=flat&logo=npm" alt="shield.png">
+    <img src="https://img.shields.io/badge/whatsapp--web.js-V.1.7%205-green?style=flat&logo=npm" alt="shield.png"></a>
 <img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badges/">
 <img src="http://hits.dwyl.com/fdciabdul/InsideHeartz-WhatsApp-Bot.svg"/>
 <a href="https://github.com/fdciabdul">
@@ -104,6 +104,8 @@ ketik !menu untuk menampilkan fitur
 | Search Image By Keyword|  ✔️|  !searchimage `keyword` |
 | Random Anime Images|  ✔️|  !randomanime |
 | Wikipedia|  ✔️|  !wiki `keyword` |
+| Chord Gitar|  ✔️|  !chord `keyword` |
+
 
 ## Premium Features ( cuz i spend a lot time of this )
 | Fitur        | Status | Command | 
