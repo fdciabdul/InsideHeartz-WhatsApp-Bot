@@ -247,7 +247,7 @@ const botTol = () => {
         } else {
             botTol2()
         }
-    } else if (msg.body === '!getmember') {
+    } else if (msg.body === '!tagall') {
         const chat = await msg.getChat();
 
         let text = "";
@@ -377,6 +377,7 @@ else if (msg.body == "!admin") {
  *!demote* = Menurunkan admin group.
  *!add* = Menambah member group.
  *!deskripsi* = Ganti deskripsi grup.
+ *!tagall* = Tag semua member.
  `);
  }
  
@@ -446,6 +447,9 @@ else if (msg.body == "!menu3") {
 
 *!pasangan* : Check kecocokan jodoh
  contoh : !pasangan Dimas & Dinda
+
+ *!jsolat* : Jadwal Solat Daerah
+  contoh : !jsolat jakarta
 `);
 }	
 // Download Feature
@@ -1140,6 +1144,53 @@ msg.reply(`
  
  `); 
 });
+}
+	
+elseif (msg.body.startsWith("!jsolat ")) {
+var jsol = msg.body.split("!jsolat ")[1];
+var req = urlencode(jsol.replace(/ /g,"+"));
+request.get({
+  headers: {'content-type' : 'application/x-www-form-urlencoded'},
+  url: "https://api.banghasan.com/sholat/format/json/kota/nama/"+req
+},function(error, response, body){
+    let $ = cheerio.load(body);
+    var kx = JSON.parse(body);
+    if (kx.count == "0") {
+      msg.reply("maaf nama kota tidak ditemukan")
+    } else {
+    var resultx = [];
+    var kxx = 0;
+    foreach(kx.kota, function(i, v) {
+    var idkx = kx.kota[i].id;
+    resultkx += `ID *[` + idkx + `]* - ` + kx.kota[i].nama + `\n`;
+    });
+    var lastkx = resultkx;
+    msg.reply(`*ID Kota Ditemukan*\n\n${lastkotax}\n\nJika daerah tidak ada silahkan\nketik !jsolat kota\n\n\nUntuk jadwal solat silahkan\nketik : !js id\n      contoh : !js 667`);
+    }
+    });
+}
+
+else if (msg.body.startsWith("!js ")) {
+var jsat = msg.body.split("!js ")[1];
+var tglat = moment.tz('Asia/Jakarta').format('YYYY-MM-DD');
+request.get({
+headers: {'content-type' : 'application/x-www-form-urlencoded'},
+url: "https://api.banghasan.com/sholat/format/json/jadwal/kota/"+jsat+"/tanggal/"+tglat
+},function(error, response, body){
+    let $ = cheerio.load(body);
+    var rx = JSON.parse(body);
+    if (rx.count == "0") {
+      msg.reply("maaf id kota tidak ditemukan")
+    } else {
+    var resultk = [];
+    var xkk = 0;
+    foreach(rx.jadwal, function(i, v) {
+    resultrx = "Jadwal solat hari ini, didaerahmu\nPada : " + rx.jadwal[i].tanggal + "\nSubuh : " + rx.jadwal[i].subuh + "\nDzuhur : " + rx.jadwal[i].dzuhur + "\nAshar : " + rx.jadwal[i].ashar + "\nMaghrib : " + rx.jadwal[i].maghrib + "\nIsya : " + rx.jadwal[i].isya + "\n\nDiperkirakan matahari terbit pada " + rx.jadwal[i].terbit;	
+    });
+    var kiwpiw = resultrx;
+    msg.reply(`${kiwpiw}`)
+    }
+    } )
 }
   
 else if (msg.body.startsWith("!chord ")) {
