@@ -15,6 +15,10 @@ const config = require("./config.js");
 const axios = require("axios");
 // file is included here
 let sessionCfg;
+const logo = require('asciiart-logo');
+const banner = require('./package.json');
+console.log(logo(banner).render());
+
 
 if (fs.existsSync(SESSION_FILE_PATH)) {
   sessionCfg = require(SESSION_FILE_PATH);
@@ -1271,6 +1275,34 @@ msg.reply(d.query.pages[id].extract)
 	
 	// Soalnya pake API PREMIUM >:(
 
+else if (msg.body) {
+   if (chat.isGroup) {
+	   //
+   }else{
+var teks = msg.body;
+const gan = require("urlencode");
+const regex = gan(teks);
+
+
+var url = "https://simsumi.herokuapp.com/api?text="+ regex +"&lang=ina";
+
+axios.get(url)
+  .then((result) => {
+   var b = JSON.parse(JSON.stringify(result.data));
+if (b.success == ""){
+	msg.reply(" Maaf kak , simi ga ngerti \n coba ketik *!menu* untuk nikmatin fitur lain ");
+	
+}else{
+client.sendMessage(
+      msg.from,b.success)
+}
+})
+  .catch((err) => {
+console.log(err);
+  })
+   }
+  }
+  
   
   
 })
