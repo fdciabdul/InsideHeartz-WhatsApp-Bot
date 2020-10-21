@@ -28,7 +28,7 @@
     "translatte": "^2.5.8",
     "urlencode": "^1.1.0",
     "video-url-link": "^0.1.4",
-    "whatsapp-web.js": "^1.8.0",
+   "venom-bot": "^2.0.16",
     "youtube-mp3-downloader": "^0.6.8"
   },
   "scripts": {
