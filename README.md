@@ -2,6 +2,9 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
+```diff
+-THIS PROJECT IS UNMAINTAINED, SHOULDN'T BE USED / LEFT HERE JUST FOR THE EDUCATIONAL PURPOSES
+```
   <br>
   <a href="https://github.com/fdciabdul/InsideHeartz-WhatsApp-Bot"><img src="https://telegra.ph/file/403ab70e865577ceb0383.png" width="150" height=150"></a>
   <br>
