@@ -15,7 +15,7 @@ For English on here : <a href="https://github.com/fdciabdul/InsideHeartz-WhatsAp
   <a href="https://github.com/pedroslopez/whatsapp-web.js">
     <img src="https://img.shields.io/badge/whatsapp--web.js-V.1.7%205-green?style=flat&logo=npm" alt="shield.png"></a>
 <img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badges/">
-<img src="http://hits.dwyl.com/fdciabdul/InsideHeartz-WhatsApp-Bot.svg"/>
+<img src="http://hits.dwyl.com/fdciabdul/InsideHeartz-WhatsApp-Bot.svg">
 <a href="https://github.com/fdciabdul">
     <img src="https://img.shields.io/badge/license-GNU%20GPL%20v3-green?style=flat-square" alt="shield.png">
   </a>
