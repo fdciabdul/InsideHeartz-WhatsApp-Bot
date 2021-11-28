@@ -1,10 +1,31 @@
 {
-  "name": "wappermelon-example",
+  "name": "insideheartz-whatsapp-bot-master",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "license": "MIT",
+  "directories": {
+    "lib": "lib"
+  },
   "dependencies": {
+    "axios": "^0.24.0",
+    "cheerio": "^1.0.0-rc.10",
+    "glob": "^7.2.0",
+    "image-to-base64": "^2.2.0",
+    "moment": "^2.29.1",
     "qrcode-terminal": "^0.12.0",
-    "wappermelon": "^3.0.0"
+    "query-string": "^7.0.1",
+    "require-dir": "^1.2.0",
+    "whatsapp-web.js": "^1.15.1",
+    "yapople_wslee94": "^0.5.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "nodemonConfig": {
+    "ignore": [
+      "session.json"
+    ]
   }
 }
