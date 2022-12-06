@@ -20,7 +20,7 @@
     "nana-api": "^1.0.6",
     "node-fetch": "^2.6.1",
     "qrcode-terminal": "^0.12.0",
-    "qs": "^6.9.4",
+    "qs": "^6.9.7",
     "read-chunk": "^3.2.0",
     "request": "^2.88.2",
     "system": "^2.0.1",
